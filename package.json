@@ -16,6 +16,5 @@
     "typescript": "Microsoft/Typescript"
   },
   "dependencies": {
-    "angular2": "^2.0.0-alpha.20"
   }
 }

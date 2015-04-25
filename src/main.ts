@@ -17,7 +17,7 @@ import {Component, bootstrap, View, For} from "angular2/angular2";
       </li>
     </ul>
     <input #textbox>
-    <button (click)="addNoTodo(textbox.value)"><span class="glyphicon glyphicon-pencil"></span> Add</button>
+    <button (click)="addNoTodo(textbox.value)"><span class="glyphicon glyphicon-pencil"></span>Add</button>
     `,
     directives: [For]
 })

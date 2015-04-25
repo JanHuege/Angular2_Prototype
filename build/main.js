@@ -22,7 +22,7 @@ define(["require", "exports", "angular2/angular2"], function (require, exports, 
                 selector: 'cmp'
             }),
             angular2_1.View({
-                template: "\n    <h1>Not todo</h1>\n    <ul *for=\"#noTodo of noTodos\">\n      <li>\n        {{ noTodo }}\n      </li>\n    </ul>\n    <input #textbox>\n    <button (click)=\"addNoTodo(textbox.value)\"><span class=\"glyphicon glyphicon-pencil\"></span>\uFFFDAdd</button>\n    ",
+                template: "\n    <h1>Not todo</h1>\n    <ul *for=\"#noTodo of noTodos\">\n      <li>\n        {{ noTodo }}\n      </li>\n    </ul>\n    <input #textbox>\n    <button (click)=\"addNoTodo(textbox.value)\"><span class=\"glyphicon glyphicon-pencil\"></span>Add</button>\n    ",
                 directives: [angular2_1.For]
             })
         ], MyCmp);
