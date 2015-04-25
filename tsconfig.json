@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "module": "AMD",
+        "target": "es5",
+        "outDir": "./build"
+    },
+    "files": [
+        "./src/Person.ts",
+        "./src/Haus.ts",
+        "./src/main.ts"
+    ]
+}

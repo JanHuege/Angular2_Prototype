@@ -1,0 +1,21 @@
+{
+  "name": "Angular_Standard_01",
+  "version": "1.0.0",
+  "description": "Startpunkt Angular2Prototyp mit Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christina Braun, Nazif Karayel, Laith Al-Khazrage, Jan Huege",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-shell": "^0.4.1",
+    "gulp-typescript": "*",
+    "merge2": "^0.3.5",
+    "typescript": "Microsoft/Typescript"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.20"
+  }
+}
