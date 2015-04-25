@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Christina Braun, Nazif Karayel, Laith Al-Khazrage, Jan Huege",
+  "author": "Christina B, Nazif K, Laith A, Jan H",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.8.11",
