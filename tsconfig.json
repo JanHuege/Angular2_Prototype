@@ -6,8 +6,9 @@
         "outDir": "./build"
     },
     "files": [
-        "./src/Person.ts",
-        "./src/Haus.ts",
-        "./src/main.ts"
+        "./src/main.ts",
+        "./src/tryout.ts",
+        "./src/show-properties.ts",
+        "./src/todo.ts"
     ]
 }
