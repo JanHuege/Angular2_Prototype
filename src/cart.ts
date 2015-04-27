@@ -3,6 +3,7 @@
  */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {ArticleREST} from 'ArticleREST';
+import {Article} from 'Article';
 
 @Component({
     selector: 'cart'
@@ -15,6 +16,9 @@ import {ArticleREST} from 'ArticleREST';
                 Artikelname: {{ art.name }} Preis: {{ art.price }}
             </li>
         </ul>
+        <p></p>
+        Wert des Warenkorbs: {{ value }}
+        <p></p>
         <input #texarticleid>
         <button (click)="addToCart(texarticleid.value)">Zum Warenkorb hinzufuegen</button>
         <p></p>
@@ -25,23 +29,33 @@ import {ArticleREST} from 'ArticleREST';
 })
 class Cart{
 
-    cart = [{id: 1, name: 'test', price: 12}];
+    //cart = [{id: 1, name: 'test', price: 12}];
+    cart: Array <Article>;
     articleMock;
+    value: number;
 
-    // TODO Artikelklasse für Array <Artikel>
+    // TODO Artikelklasse für Array <Artikel> - Done
     constructor(){
         this.articleMock = new ArticleREST();
         this.cart = [];
+        this.value = 0;
+    }
+
+    updateValue(){
+        var val = 0;
+        this.cart.forEach(function(article){
+           val += article.price;
+        });
+        this.value = Math.round(val*100)/100;
     }
 
     addToCart(id: number){
-        // var article = this.articleMock.getArticleById(id);
-        var article = {id: 2, name: 'abc', price: 13};
+        var article = this.articleMock.findArticleById(id);
 
         if(article){
             this.cart.push(article);
         }
-
+        this.updateValue();
     }
 
     // TODO http://localhost:8080/build/Warenkorb Zum Testen 2 Arikel adden per hinzufügen und dann 2 bei löschen eingeben und button
@@ -57,6 +71,7 @@ class Cart{
             }
         });
         this.cart.splice(index, 1);
+        this.updateValue();
     }
 
     doneTyping($event){

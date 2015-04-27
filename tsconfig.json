@@ -12,6 +12,9 @@
         "./src/cart.ts",
         "./src/tryout.ts",
         "./src/todo.ts",
-        "./src/show-properties.ts"
+        "./src/show-properties.ts",
+        "./src/CustomerController.ts",
+        "./src/Customer.ts",
+        "./src/CustomerREST.ts"
     ]
 }
