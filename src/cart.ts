@@ -44,21 +44,19 @@ class Cart{
 
     }
 
-
     // TODO http://localhost:8080/build/Warenkorb Zum Testen 2 Arikel adden per hinzufügen und dann 2 bei löschen eingeben und button
     deleteFromCart(delid: number) {
+        var index = 0;
+        var gefunden = false;
         this.cart.forEach(function(article){
-            console.log(article.name);
-            console.log("artikelid= " + article.id + " delid= " + delid);
-            console.log(this.length);
             if (article.id == delid) {
-                console.log("IF");
-                //this.cart.remove(article);
-                this.cart.splice(article);
-                return;
+                gefunden = true;
             }
-
+            else if(!gefunden){
+                index++;
+            }
         });
+        this.cart.splice(index, 1);
     }
 
     doneTyping($event){
