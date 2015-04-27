@@ -8,6 +8,7 @@
     "files": [
         "./src/Person.ts",
         "./src/Haus.ts",
-        "./src/main.ts"
+        "./src/main.ts",
+        "./src/ArticleREST.ts"
     ]
 }
