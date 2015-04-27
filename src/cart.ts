@@ -10,51 +10,46 @@ import {ArticleREST} from 'ArticleREST';
 @View({
     template: `
         <h1>Warenkorb</h1>
-        <ul *for = "#art of cart">
+        <ul *for = "#art in cart">
             <li>
-                Artikelname: {{ art.name }} Preis: {{ art.price }}
+                {{ art.name }}
             </li>
         </ul>
-        <input #texarticleid>
-        <button (click)="addToCart(texarticleid.value)">Zum Warenkorb hinzufuegen</button>
-        <p></p>
-        <input #texdelid>
-        <button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
-    `,
-    directives: [For]
+        <input #articleId>
+        <button (click)="addToCart(articleId.value)">Zum Warenkorb hinzufügen</button>
+    `
 })
 class Cart{
 
-    cart;
+    cart = [];
     articleMock;
-
 
     constructor(){
         this.articleMock = new ArticleREST();
-        this.cart = [{id: 1, name: 'test', price: 12}];
+        this.cart;
     }
 
     addToCart(id: number){
-        // var article = this.articleMock.getArticleById(id);
-        var article = {id: 2, name: 'abc', price: 13};
+        var article = this.articleMock.getArticleById(id);
 
         if(article){
             this.cart.push(article);
         }
 
+
     }
 
     deleteFromCart(delid: number) {
-        this.cart.forEach(function(article){
-            console.log(article.name);
+
+        for (var article in this.articles) {
             if (article.id == delid) {
-                console.log("IF");
                 this.cart.pop(article);
                 return;
             }
 
-        });
+        }
     }
+
 
     doneTyping($event){
         if($event.which === 13){
