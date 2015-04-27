@@ -2,7 +2,7 @@
  * Created by Jan on 27.04.2015.
  */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
-import {ArticleREST} from 'ArticleREST';
+import {ArticleREST} from 'ArticleRest';
 import {Article} from 'Article';
 
 @Component({

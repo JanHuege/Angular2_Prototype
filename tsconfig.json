@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "declaration": true,
+        "declaration": false,
         "module": "AMD",
         "target": "es5",
         "outDir": "./build/scripts"

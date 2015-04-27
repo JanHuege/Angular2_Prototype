@@ -2,7 +2,7 @@
  * Created by Jan and Laith on 27.04.2015.
  */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
-import {CustomerREST} from 'CustomerREST';
+import {CustomerREST} from 'CustomerRest';
 import {Customer} from 'Customer';
 
 @Component({
