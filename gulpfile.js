@@ -3,6 +3,8 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var merge = require('merge2');
 var shell = require('gulp-shell');
+var webserver = require('gulp-webserver');
+var connect = require('gulp-connect')
 
 //TODO
     // traceur?
@@ -40,6 +42,25 @@ gulp.task('watch', function(){
     gulp.watch('src/*', ['shell']);
 });
 
+gulp.task('webserver', function() {
+    gulp.src('build')   //was macht src?
+        .pipe(webserver({
+            livereload: true,
+            directoryListing: {
+                enable: false
+
+            },
+            open: true
+        }));
+});
+
+gulp.task('connect', function() {
+    connect.server({
+        //root: 'build',
+        livereload: true
+    });
+});
+
 // default task called by * gulp
 //gulp.task('default',['scripts', 'watch']);
-gulp.task('default',['shell', 'watch']);
+gulp.task('default',['shell', 'connect', 'watch']);
