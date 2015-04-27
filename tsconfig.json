@@ -3,12 +3,14 @@
         "declaration": true,
         "module": "AMD",
         "target": "es5",
-        "outDir": "./build"
+        "outDir": "./build/scripts"
     },
     "files": [
         "./src/main.ts",
         "./src/ArticleREST.ts",
         "./src/cart.ts",
-        "./src/tryout.ts"
+        "./src/tryout.ts",
+        "./src/todo.ts",
+        "./src/show-properties.ts"
     ]
 }
