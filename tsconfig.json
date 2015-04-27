@@ -1,13 +1,20 @@
 {
     "compilerOptions": {
-        "declaration": true,
+        "declaration": false,
         "module": "AMD",
         "target": "es5",
-        "outDir": "./build"
+        "outDir": "./build/scripts"
     },
     "files": [
         "./src/main.ts",
         "./src/ArticleREST.ts",
-        "./src/cart.ts"
+        "./src/Article.ts",
+        "./src/cart.ts",
+        "./src/tryout.ts",
+        "./src/todo.ts",
+        "./src/show-properties.ts",
+        "./src/CustomerController.ts",
+        "./src/Customer.ts",
+        "./src/CustomerREST.ts"
     ]
 }

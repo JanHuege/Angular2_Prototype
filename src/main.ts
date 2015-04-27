@@ -4,7 +4,7 @@
 
 
 import {Component, bootstrap, View, For} from "angular2/angular2";
-import {ArticleREST} from 'ArticleREST';
+import {ArticleREST} from 'ArticleRest';
 
 @Component({
     selector: 'cmp'

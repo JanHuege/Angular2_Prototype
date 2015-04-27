@@ -16,9 +16,24 @@ define(["require", "exports"], function (require, exports) {
                     name: 'Haessliches Sofa',
                     price: 22.81,
                     description: 'Einfach Schrott.'
+                },
+                {
+                    id: 3,
+                    name: 'Wackeliger Tisch',
+                    price: 22.81,
+                    description: 'Designer-Object.'
                 }
             ];
         }
+        ArticleREST.prototype.findArticleById = function (id) {
+            var article = null;
+            this.articles.forEach(function (art) {
+                if (art.id == id) {
+                    article = art;
+                }
+            });
+            return article;
+        };
         ArticleREST.prototype.getArticleById = function (id) {
             return {
                 id: id,
