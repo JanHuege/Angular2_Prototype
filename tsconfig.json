@@ -9,6 +9,7 @@
         "./src/Person.ts",
         "./src/Haus.ts",
         "./src/main.ts",
-        "./src/ArticleREST.ts"
+        "./src/ArticleREST.ts",
+        "./src/show-properties.ts"
     ]
 }
