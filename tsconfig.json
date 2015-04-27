@@ -8,6 +8,7 @@
     "files": [
         "./src/main.ts",
         "./src/ArticleREST.ts",
-        "./src/cart.ts"
+        "./src/cart.ts",
+        "./src/tryout.ts"
     ]
 }

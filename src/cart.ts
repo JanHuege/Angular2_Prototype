@@ -25,13 +25,13 @@ import {ArticleREST} from 'ArticleREST';
 })
 class Cart{
 
-    cart;
+    cart = [{id: 1, name: 'test', price: 12}];
     articleMock;
 
-
+    // TODO Artikelklasse für Array <Artikel>
     constructor(){
         this.articleMock = new ArticleREST();
-        this.cart = [{id: 1, name: 'test', price: 12}];
+        this.cart = [];
     }
 
     addToCart(id: number){
@@ -44,12 +44,17 @@ class Cart{
 
     }
 
+
+    // TODO http://localhost:8080/build/Warenkorb Zum Testen 2 Arikel adden per hinzufügen und dann 2 bei löschen eingeben und button
     deleteFromCart(delid: number) {
         this.cart.forEach(function(article){
             console.log(article.name);
+            console.log("artikelid= " + article.id + " delid= " + delid);
+            console.log(this.length);
             if (article.id == delid) {
                 console.log("IF");
-                this.cart.pop(article);
+                //this.cart.remove(article);
+                this.cart.splice(article);
                 return;
             }
 
