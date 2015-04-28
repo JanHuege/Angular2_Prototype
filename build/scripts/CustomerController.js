@@ -6,18 +6,23 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-define(["require", "exports", 'angular2/angular2', '../CustomerRest'], function (require, exports, angular2_1, CustomerRest_1) {
+define(["require", "exports", 'angular2/angular2', './CustomerRest'], function (require, exports, angular2_1, CustomerRest_1) {
     var CustomerController = (function () {
         function CustomerController() {
             var CustomerMock = new CustomerRest_1.CustomerREST();
             this.customer = CustomerMock.getCustomerById(1);
         }
+        CustomerController.prototype.getCustomer = function (id) {
+            var CustomerMock = new CustomerRest_1.CustomerREST();
+            var customer = CustomerMock.findCustomerById(id);
+            this.customer = customer;
+        };
         CustomerController = __decorate([
             angular2_1.Component({
                 selector: 'customercontroller'
             }),
             angular2_1.View({
-                template: "\n        <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>\n\n    ",
+                template: "\n        <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>\n        <p>\n            <h3>Vorname: {{ customer.firstname }}</h3><br>\n            <h3>Nachname: {{ customer.name }}</h3><br>\n            <h3>Alter: {{ customer.age }}</h3><br>\n        </p>\n        <p>\n            <input #customerid/>\n            <button (click)=\"getCustomer(customerid.value)\">Finde Kunden</button>\n        </p>\n    ",
                 directives: [angular2_1.For]
             })
         ], CustomerController);

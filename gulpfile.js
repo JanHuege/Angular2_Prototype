@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var merge = require('merge2');
 var shell = require('gulp-shell');
-var connect = require('gulp-connect')
+var connect = require('gulp-connect');
 
 //TODO
     // traceur?

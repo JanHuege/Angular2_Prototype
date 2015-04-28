@@ -47,7 +47,7 @@ export class CustomerREST {
         }
     }
 
-    getArticle() {
+    getCustomers() {
         return this.customers;
     }
 }
