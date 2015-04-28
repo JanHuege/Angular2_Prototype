@@ -11,7 +11,15 @@ import {Customer} from 'Customer';
 @View({
     template: `
         <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>
-
+        <p>
+            <h3>Vorname: {{ customer.firstname }}</h3><br>
+            <h3>Nachname: {{ customer.name }}</h3><br>
+            <h3>Alter: {{ customer.age }}</h3><br>
+        </p>
+        <p>
+            <input #customerid/>
+            <button (click)="getCustomer(customerid.value)">Finde Kunden</button>
+        </p>
     `,
     directives: [For]
 })
@@ -21,6 +29,12 @@ class CustomerController{
     constructor(){
         var CustomerMock = new CustomerREST();
         this.customer = CustomerMock.getCustomerById(1);
+    }
+
+    getCustomer(id: number){
+        var CustomerMock = new CustomerREST();
+        var customer = CustomerMock.findCustomerById(id);
+        this.customer = customer;
     }
 }
 
