@@ -9,7 +9,7 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-define(["require", "exports", "angular2/angular2", 'ArticleRest'], function (require, exports, angular2_1, ArticleRest_1) {
+define(["require", "exports", "angular2/angular2", './ArticleRest'], function (require, exports, angular2_1, ArticleRest_1) {
     var MyCmp = (function () {
         function MyCmp() {
             this.noTodos = ["hello"];
