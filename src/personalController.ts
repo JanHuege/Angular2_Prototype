@@ -3,8 +3,8 @@
  */
 
 import {Component,View,bootstrap,For,If} from 'angular2/angular2';
-import {PersonalRest} from 'PersonalRest';
-import {Personal} from 'Personal';
+import {PersonalREST} from './PersonalRest';
+import {personal} from 'Personal';
 
 @Component ({
     selector: 'personalcontroller'
@@ -27,15 +27,15 @@ import {Personal} from 'Personal';
 })
 
 class personalController{
-    personal: Personal;
+    personal: personal;
 
     constructor(){
-        var PersonalMock = new PersonalRest();
+        var PersonalMock = new PersonalREST();
         this.personal = PersonalMock.getPersonalById(1);
     }
 
     getPersonal(id: number){
-        var PersonalMock = new PersonalRest();
+        var PersonalMock = new PersonalREST();
         var personal = PersonalMock.findPersonalById(id);
         this.personal = personal;
     }
