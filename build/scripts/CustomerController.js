@@ -22,7 +22,20 @@ define(["require", "exports", 'angular2/angular2', './CustomerRest'], function (
                 selector: 'customercontroller'
             }),
             angular2_1.View({
-                template: "\n        <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>\n        <p>\n            <h3>Vorname: {{ customer.firstname }}</h3><br>\n            <h3>Nachname: {{ customer.name }}</h3><br>\n            <h3>Alter: {{ customer.age }}</h3><br>\n        </p>\n        <p>\n            <input #customerid/>\n            <button (click)=\"getCustomer(customerid.value)\">Finde Kunden</button>\n        </p>\n    ",
+                /*template: `
+                    <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>
+                    <p>
+                        <h3>Vorname: {{ customer.firstname }}</h3><br>
+                        <h3>Nachname: {{ customer.name }}</h3><br>
+                        <h3>Alter: {{ customer.age }}</h3><br>
+                    </p>
+                    <p>
+                        <input #customerid/>
+                        <button (click)="getCustomer(customerid.value)">Finde Kunden</button>
+                    </p>
+                `,
+                */
+                templateUrl: "html_templates/customer_template.html",
                 directives: [angular2_1.For]
             })
         ], CustomerController);

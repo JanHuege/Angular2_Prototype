@@ -9,7 +9,7 @@ import {Customer} from 'Customer';
     selector: 'customercontroller'
 })
 @View({
-    template: `
+    /*template: `
         <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>
         <p>
             <h3>Vorname: {{ customer.firstname }}</h3><br>
@@ -21,6 +21,8 @@ import {Customer} from 'Customer';
             <button (click)="getCustomer(customerid.value)">Finde Kunden</button>
         </p>
     `,
+    */
+    templateUrl: "html_templates/customer_template.html",
     directives: [For]
 })
 class CustomerController{
