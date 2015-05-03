@@ -10,6 +10,7 @@ import {ArticleREST} from './ArticleRest';
     selector: 'cmp'
 })
 @View({
+    /*
     template: `
     <h1>Rockstar-Shop :)</h1>
     <ul *for="#art of articles">
@@ -29,6 +30,8 @@ import {ArticleREST} from './ArticleRest';
     <input #textbox>
     <button (click)="addNoTodo(textbox.value)">Add</button>
     `,
+    */
+    templateUrl: "html_templates/main_template.html",
     directives: [For]
 })
 class MyCmp {

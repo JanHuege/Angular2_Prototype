@@ -9,7 +9,7 @@ import {Article} from 'Article';
     selector: 'cart'
 })
 @View({
-    template: `
+    /*template: `
         <h1>Warenkorb</h1>
         <ul *for = "#art of cart">
             <li>
@@ -25,6 +25,8 @@ import {Article} from 'Article';
         <input #texdelid>
         <button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
     `,
+    */
+    templateUrl: "html_templates/shoppingcart_template.html",
     directives: [For]
 })
 class Cart{

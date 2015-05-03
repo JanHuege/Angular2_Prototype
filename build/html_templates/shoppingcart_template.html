@@ -1,0 +1,14 @@
+<h1>Warenkorb</h1>
+<ul *for = "#art of cart">
+    <li>
+        Artikelname: {{ art.name }} Preis: {{ art.price }}
+    </li>
+</ul>
+<p></p>
+Wert des Warenkorbs: {{ value }}
+<p></p>
+<input #texarticleid>
+<button (click)="addToCart(texarticleid.value)">Zum Warenkorb hinzufuegen</button>
+<p></p>
+<input #texdelid>
+<button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>

@@ -1,0 +1,17 @@
+<h1>Rockstar-Shop :)</h1>
+<ul *for="#art of articles">
+    <li>Artikelname {{ art.name }}</li>
+    <li>Artikelnummer: {{ art.id }}</li>
+    <li>Preis: {{ art.price }}</li>
+    <li>Beschreibung:
+        {{ art.description }}
+    </li>
+</ul>
+
+<h2>Todo</h2>
+<ul *for="#todo of noTodos">
+    <li>{{ todo }}</li>
+</ul>
+
+<input #textbox>
+<button (click)="addNoTodo(textbox.value)">Add</button>

@@ -11,6 +11,7 @@ import {personal} from 'Personal';
 })
 
 @View ({
+    /*
     template: `
         <h1>Personalverwaltung von {{ personal.firstname }} {{ personal.name }} als {{personal.role}}</h1>
          <p>
@@ -23,6 +24,8 @@ import {personal} from 'Personal';
             <button (click)="getPersonal(personalid.value)">Finde Personal</button>
         </p>
     `,
+    */
+    templateUrl: "html_templates/personal_template.html",
     directives: [For]
 })
 

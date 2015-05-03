@@ -1,0 +1,10 @@
+<h1>Personalverwaltung von {{ personal.firstname }} {{ personal.name }} als {{personal.role}}</h1>
+<p>
+<h3>Vorname: {{ personal.firstname }}</h3><br>
+<h3>Nachname: {{ personal.name }}</h3><br>
+<h3>Rolle: {{ personal.role }}</h3><br>
+</p>
+<p>
+    <input #personalid/>
+    <button (click)="getPersonal(personalid.value)">Finde Personal</button>
+</p>
