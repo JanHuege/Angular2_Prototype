@@ -1,0 +1,63 @@
+#b {
+    font-family: 'Oswald', sans-serif;
+}
+
+td, th {
+    text-align: left;
+    padding: 0.5em 1em;
+
+}
+
+.container {
+    width: 960px;
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #ddd;
+
+
+    font-weight: 300;
+
+    font-size: 17px;
+    padding: 15px;
+}
+
+.header .menu {
+    list-style: none;
+    margin-top: 29%;
+
+}
+
+.menu > li {
+    display: inline;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.menu a {
+    color: #898989;
+}
+
+.nav a {
+    color: #5a5a5a;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline;
+}
+.dropdown-menu {
+    font-size: 16px;
+    margin-top: 5px;
+    min-width: 105px;
+}
+
+.dropdown-menu li a {
+    color: #898989;
+    padding: 6px 20px;
+    font-weight: 300;
+}

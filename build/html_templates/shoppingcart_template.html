@@ -1,3 +1,76 @@
+<!-- Navleiste -->
+<div class="nav">
+    <div class="container">
+        <ul class="menu" >
+            <div class="btn-group" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Alle Produkte
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Tische</a></li>
+                        <li><a href="#">Stuehle</a></li>
+                        <li><a href="#">Betten</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-default">SALEs</button>
+                <button type="button" class="btn btn-default">Service</button>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Hallo, Adam!
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Meine Profil</a></li>
+                        <li><a href="#">Meine Bestelleungen</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Abmelden</a></li>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+<!-- eigentlicher Warenkorb -->
+<h1>Warenkorb</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nr.</th>
+        <th>Artikelname</th>
+        <th>Beschreibung</th>
+        <th>Preis</th>
+        <th><!-- Löschbutton--></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *for = "#art of cart">
+        <td>0</td>
+        <td>{{ art.name }}</td>
+        <td>{{ art.description }}</td>
+        <td>{{ art.price }} &#8364; </td>
+        <td><button type="button" class="btn glyphicon glyphicon-trash btn-danger" (click)="deleteFromCart(art.id)"></button></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><b>Wert des Warenkorbs: {{ value }} &#8364; </b></p>
+<p><button type="submit" class="btn btn-success glyphicon glyphicon-shopping-cart"></button><br><br></p>
+
+<form class="form-inline">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" #texarticleid class="form-control" id="exampleInputAmount" placeholder="Produkt-Id">
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary glyphicon glyphicon-plus-sign" (click)="addToCart(texarticleid.value)" ></button>
+</form><br><br>
+
+<input #texdelid>
+<button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
+
+<!--
 <h1>Warenkorb</h1>
 <ul *for = "#art of cart">
     <li>
@@ -12,3 +85,4 @@ Wert des Warenkorbs: {{ value }}
 <p></p>
 <input #texdelid>
 <button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
+-->
