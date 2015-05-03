@@ -53,7 +53,8 @@ export class PersonalREST {
             id: id,
             name: 'Mustermann',
             firstname: 'Max',
-            age: 35
+            age: 35,
+            role: 'Mitarbeiter'
         }
     }
 
