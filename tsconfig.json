@@ -14,7 +14,7 @@
         "./src/Customer.ts",
         "./src/CustomerREST.ts",
         "./src/personal.ts",
-        "./src/personalController.ts",
+        "./src/PersonalController.ts",
         "./src/PersonalRest.ts"
     ]
 }
