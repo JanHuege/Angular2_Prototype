@@ -9,5 +9,6 @@ export class personal {
     name: string;
     firstname: string;
     age: number;
+    gehalt: number;
     //role: role;
 }

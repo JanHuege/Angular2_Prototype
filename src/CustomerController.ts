@@ -26,7 +26,7 @@ import {Customer} from 'Customer';
     templateUrl: "html_templates/customer_template.html",
     directives: [For]
 })
-class CustomerController{
+export class CustomerController{
     customer: Customer;
 
     constructor(){

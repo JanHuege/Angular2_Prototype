@@ -1,37 +1,3 @@
-<!-- Navleiste -->
-<div class="nav">
-    <div class="container">
-        <ul class="menu" >
-            <div class="btn-group" role="group" aria-label="...">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Alle Produkte
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Tische</a></li>
-                        <li><a href="#">Stuehle</a></li>
-                        <li><a href="#">Betten</a></li>
-                    </ul>
-                </div>
-                <button type="button" class="btn btn-default">SALEs</button>
-                <button type="button" class="btn btn-default">Service</button>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Hallo, Adam!
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Meine Profil</a></li>
-                        <li><a href="#">Meine Bestelleungen</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Abmelden</a></li>
-                    </ul>
-                </div>
-            </div>
-        </ul>
-    </div>
-</div>
 <!-- eigentlicher Warenkorb -->
 <h1>Warenkorb</h1>
 <table class="table table-striped">
@@ -69,20 +35,3 @@
 
 <input #texdelid>
 <button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
-
-<!--
-<h1>Warenkorb</h1>
-<ul *for = "#art of cart">
-    <li>
-        Artikelname: {{ art.name }} Preis: {{ art.price }}
-    </li>
-</ul>
-<p></p>
-Wert des Warenkorbs: {{ value }}
-<p></p>
-<input #texarticleid>
-<button (click)="addToCart(texarticleid.value)">Zum Warenkorb hinzufuegen</button>
-<p></p>
-<input #texdelid>
-<button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
--->

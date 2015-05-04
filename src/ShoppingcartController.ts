@@ -29,7 +29,7 @@ import {Article} from 'Article';
     templateUrl: "html_templates/shoppingcart_template.html",
     directives: [For]
 })
-class Cart{
+export class Cart{
 
     //cart = [{id: 1, name: 'test', price: 12}];
     cart: Array <Article>;

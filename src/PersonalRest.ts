@@ -12,6 +12,7 @@ export class PersonalREST {
             name: 'Huege',
             firstname: 'Jan',
             age: 21,
+            gehalt: 2500
             //role: 'Admin'
 
         },
@@ -19,7 +20,8 @@ export class PersonalREST {
             id: 2,
             name: 'Braun',
             firstname: 'Christina',
-            age: 20,
+            age: 22,
+            gehalt: 2200
             //role: 'Mitarbeiter'
         },
         {
@@ -27,6 +29,7 @@ export class PersonalREST {
             name: 'Al - Khazrage',
             firstname: 'Laith',
             age: 20,
+            gehalt: 2200
             //role: 'Mitarbeiter'
         },
         {
@@ -34,6 +37,7 @@ export class PersonalREST {
             name: 'Karayel',
             firstname: 'Nazif',
             age: 21,
+            gehalt: 2200
             //role: 'Mitarbeiter'
         }
     ];
@@ -54,6 +58,7 @@ export class PersonalREST {
             name: 'Mustermann',
             firstname: 'Max',
             age: 35,
+            gehalt: 0,
             role: 'Mitarbeiter'
         }
     }
