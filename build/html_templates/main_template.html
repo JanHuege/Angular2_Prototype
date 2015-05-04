@@ -10,9 +10,10 @@
                 <li class="Einstellungen">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Einstellungen<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a (click)="warenkorb.value='';kunde.value='none'; personal.value='none'">Warenkorb show</a></li>
-                        <li><a (click)="warenkorb.value='none';kunde.value=''; personal.value='none'">Kunde show</a></li>
-                        <li><a (click)="warenkorb.value='none';kunde.value='none'; personal.value=''">Personal show</a></li>
+                        <li><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide()">Index show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); personal.value = hide()">Warenkorb show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); personal.value = hide()">Kunde show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = show()">Personal show</a></li>
                     </ul>
                 </li>
             </ul>
@@ -33,21 +34,29 @@
     </div>
 </nav>
 
+<div id="Seitenmitte">
+    
+    <span #index></span>
+    <span #warenkorb></span>
+    <span #kunde></span>
+    <span #personal></span>
 
-<span #warenkorb></span>
-<span #kunde></span>
-<span #personal></span>
+    <div *If="!index.value" style="text-align: center">
+        <h1>Startseite</h1>
+    </div>
 
-<div style="text-align: center" [style.display]="warenkorb.value">
-    <cart></cart>
-</div>
+    <!-- <div style="text-align: center" [style.display]="warenkorb.value"> -->
+    <div *If="warenkorb.value" style="text-align: center">
+        <cart></cart>
+    </div>
 
-<div style="text-align: center" [style.display]="kunde.value">
-    <customercontroller></customercontroller>
-</div>
+    <div *If="kunde.value" style="text-align: center" >
+        <customercontroller></customercontroller>
+    </div>
 
-<div style="text-align: center" [style.display]="personal.value">
-    <personalcontroller></personalcontroller>
+    <div *If="personal.value" style="text-align: center">
+        <personalcontroller></personalcontroller>
+    </div>
 </div>
 
 
