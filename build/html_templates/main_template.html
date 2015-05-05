@@ -4,10 +4,10 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="Startseite"><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide()" href="#">Startseite</a></li>
-                <li class="Artikel"><a href="#Artikel">Artikel</a></li>
-                <li class="Warenkorb"><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); personal.value = hide()" href="#">Warenkorb</a></li>
-                <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); personal.value = hide()" href="#profil">Profil</a></li>
+                <li class="Startseite"><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()" href="#">Startseite</a></li>
+                <li class="Artikel"><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = show()"href="#Artikel">Artikel</a></li>
+                <li class="Warenkorb"><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()" href="#">Warenkorb</a></li>
+                <li class="Kunde"><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); personal.value = hide(); artikel.value = hide()" href="#profil">Profil</a></li>
                 <li><a href="#nachrichten">Nachrichten</a></li>
                 <li class="Einstellungen">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Einstellungen<span class="caret"></span></a>
@@ -16,7 +16,7 @@
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()">Warenkorb show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); personal.value = hide(); artikel.value = hide()">Kunde show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = show(); artikel.value = hide()">Personal show</a></li>
-                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value= hide(); artikel.value = show()">Article Show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = show()">Article Show</a></li>
                     </ul>
                 </li>
             </ul>
