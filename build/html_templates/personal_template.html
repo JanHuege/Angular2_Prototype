@@ -1,37 +1,29 @@
-<div class="jumbotron">
-    <div class="container">
+<div class="jumbotron" >
+    <h2> Personalverwaltung von {{personal.firstname}} {{personal.name}} </h2> </br>
+    <table class="table table-striped"  align="center" valign="middle">
+        <thead>
+        <tr>
+            <th>Nr.</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>UserID</th>
+            <th>Rolle</th>
+            <th>Gehalt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
 
-        <h2> Personalverwaltung von {{personal.firstname}} {{personal.name}} </h2> </br>
+            <td> {{personal.id}}</td>
+            <td>{{ personal.firstname }}</td>
+            <td>{{ personal.name }}  </td>
+            <td> @MaxiCosi </td>
+            <td>{{ personal.role }}  </td>
+            <td>{{ personal.gehalt }}  </td>
+        </tr>
+        </tbody>
+    </table>
 
-
-        <div class="col-md-6">
-            <table class="table table-striped">
-
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>  Vorname </th>
-                    <th>  Nachname </th>
-                    <th>  UserID   </th>
-                    <th>  Rolle  </th>
-                    <th>  Gehalt  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ personal.id }}</td>
-                    <td>{{ personal.firstname }}</td>
-                    <td>{{ personal.name }}</td>
-                    <td>@MaxiCosi</td>
-                    <td> {{ personal.role }} </td>
-                    <td> {{ personal.gehalt }} </td>
-                </tr>
-                </tbody>
-
-            </table>
-            </p>
-        </div>
-    </div>  </br>
-    <input #personalid/>
+ <input #personalid/>
     <a class="btn btn-primary btn-lg" href="#" role="button" (click)="getPersonal(personalid.value)">Finde anderes Personal &raquo;</a>
 </div>
