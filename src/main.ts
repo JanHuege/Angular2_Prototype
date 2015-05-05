@@ -6,13 +6,14 @@ import {ArticleREST} from './ArticleRest';
 import {Cart} from './ShoppingcartController';
 import {CustomerController} from './CustomerController';
 import {PersonalController} from './PersonalController';
+import {ArticleController} from './ArticleController';
 
 @Component({
     selector: 'cmp'
 })
 @View({
     templateUrl: "html_templates/main_template.html",
-    directives: [If, For, CustomerController, Cart, PersonalController]
+    directives: [If, For, CustomerController, Cart, PersonalController, ArticleController]
 })
 class MyCmp {
     article;
