@@ -15,6 +15,9 @@
         "./src/CustomerREST.ts",
         "./src/personal.ts",
         "./src/PersonalController.ts",
-        "./src/PersonalRest.ts"
+        "./src/PersonalRest.ts",
+        "./src/testimport.ts",
+        "./src/testexport.ts",
+        "./src/test.ts"
     ]
 }

@@ -1,5 +1,10 @@
-Projektstartpunkt:
+Status:
+
+DONE:
+    - Mockup für RESTapi
+    - Grunddesign
 
 TODO:
-    - Compiler zum laufen bringen für Typescript 1.5 Alpha (gulp)
-    - ...
+    - Import/Export anpassen für Shop (siehe testx.ts files und .html)
+    - gulpfile anpassen (tslint, concat, uglify usw testen)
+    - Routerrelease abwarten und ggf. einbinden
