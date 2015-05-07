@@ -6,49 +6,31 @@ import {ArticleREST} from './ArticleRest';
 import {Article} from 'Article';
 
 @Component({
-    selector: 'cart'
+    selector: 'cart',
+    properties: {
+        cart: 'cart'
+    }
 })
 @View({
-    /*template: `
-        <h1>Warenkorb</h1>
-        <ul *for = "#art of cart">
-            <li>
-                Artikelname: {{ art.name }} Preis: {{ art.price }}
-            </li>
-        </ul>
-        <p></p>
-        Wert des Warenkorbs: {{ value }}
-        <p></p>
-        <input #texarticleid>
-        <button (click)="addToCart(texarticleid.value)">Zum Warenkorb hinzufuegen</button>
-        <p></p>
-        <input #texdelid>
-        <button (click)="deleteFromCart(texdelid.value)">Artikel aus Warenkorb loeschen</button>
-    `,
-    */
     templateUrl: "html_templates/shoppingcart_template.html",
     directives: [For]
 })
 export class Cart{
 
-    //cart = [{id: 1, name: 'test', price: 12}];
     cart: Array <Article>;
     articleMock;
-    value: number;
 
-    // TODO Artikelklasse für Array <Artikel> - Done
     constructor(){
         this.articleMock = new ArticleREST();
         this.cart = [];
-        this.value = 0;
     }
 
-    updateValue(){
+    calculateTotal(){
         var val = 0;
         this.cart.forEach(function(article){
            val += article.price;
         });
-        this.value = Math.round(val*100)/100;
+        return Math.round(val*100)/100;
     }
 
     addToCart(id: number){
@@ -57,10 +39,8 @@ export class Cart{
         if(article){
             this.cart.push(article);
         }
-        this.updateValue();
     }
 
-    // TODO http://localhost:8080/build/Warenkorb Zum Testen 2 Arikel adden per hinzufügen und dann 2 bei löschen eingeben und button
     deleteFromCart(delid: number) {
         var index = 0;
         var gefunden = false;
@@ -73,7 +53,6 @@ export class Cart{
             }
         });
         this.cart.splice(index, 1);
-        this.updateValue();
     }
 
     doneTyping($event){

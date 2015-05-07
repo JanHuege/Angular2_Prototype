@@ -6,6 +6,7 @@
         <img src="img/no_image.png" style="width: 20%;max-height: 20%">
         <p>{{ art.description }}</p>
         <p>{{ art.price }}</p>
+        <button (click)="addArticle(art)">Kaufen</button>
     </div>
 </div>
 
@@ -29,3 +30,5 @@
         </li>
     </ul>
 </nav>
+
+<button (click)="logList()">Log</button>

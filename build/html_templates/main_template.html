@@ -4,19 +4,28 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="Startseite"><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()" href="#">Startseite</a></li>
-                <li class="Artikel"><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = show()"href="#Artikel">Artikel</a></li>
-                <li class="Warenkorb"><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()" href="#">Warenkorb</a></li>
-                <li class="Kunde"><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); personal.value = hide(); artikel.value = hide()" href="#profil">Profil</a></li>
+                <li class="Startseite"><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'" href="#Startseite">Startseite</a></li>
+                <li class="Artikel"><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = ''"href="#Artikel">Artikel</a></li>
+                <li class="Warenkorb"><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'" href="#Warenkorb">Warenkorb</a></li>
+                <li class="Kunde"><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = show(); personal.value = hide(); artikel.value = 'none'" href="#Profil">Profil</a></li>
                 <li><a href="#nachrichten">Nachrichten</a></li>
                 <li class="Einstellungen">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Einstellungen<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <!--
                         <li><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()">Index show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); personal.value = hide(); artikel.value = hide()">Warenkorb show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); personal.value = hide(); artikel.value = hide()">Kunde show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = show(); artikel.value = hide()">Personal show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); personal.value = hide(); artikel.value = show()">Article Show</a></li>
+                        -->
+                        <!-- Workaround für Warenkorbimport -->
+                        <li><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'">Index show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = ''">Article Show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'">Warenkorb show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = show(); personal.value = hide(); artikel.value = 'none'">Kunde show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = show(); artikel.value = 'none'">Personal show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'">Hide all</a></li>
                     </ul>
                 </li>
             </ul>
@@ -100,9 +109,16 @@
         </div>
     </div>
 
-    <div *If="warenkorb.value" style="text-align: center">
-        <cart></cart>
+    <!-- Warenkorb und Artikel/Katalog div ausblenden mit IF führt zum löschen des div wenn *IF = true -> Fehler für Import/Export -->
+    <!--
+    <div *If="warenkorb.value" style="text-align: center" >
+        <cart [cart]="art.list"></cart>
     </div>
+
+    <div *If="artikel.value" style="text-align: center" >
+        <articlecontroller #art></articlecontroller>
+    </div>
+    -->
 
     <div *If="kunde.value" style="text-align: center" >
         <customercontroller></customercontroller>
@@ -112,9 +128,16 @@
         <personalcontroller></personalcontroller>
     </div>
 
-    <div *If="artikel.value" style="text-align: center">
-        <articlecontroller></articlecontroller>
+
+    <!-- Workaround für Warenkorbimport -->
+    <div [style.display]="warenkorb.value" style="text-align: center">
+        <cart [cart]="art.list"></cart>
     </div>
+
+    <div [style.display]="artikel.value" style="text-align: center" >
+        <articlecontroller #art></articlecontroller>
+    </div>
+
 </div>
 
 
@@ -144,13 +167,13 @@
         <p><a class="btn btn-default" href="#" role="button">Mehr zu Christina &raquo;</a></p>
     </div>
     <div class="col-lg-4">
-        <img class="img-circle" src="img/jurgen.jpg" alt="Generic placeholder image" width="100" height="100">
+        <img class="img-circle" src="img/no_image.png" alt="Generic placeholder image" width="100" height="100">
         <h3>SCRUM - Master</h3>
         <p>Er ist das Team hinter unserem Team</p>
         <p><a class="btn btn-default" href="#" role="button">Mehr zu J&uumlrgen &raquo;</a></p>
     </div>
     <div class="col-lg-4">
-        <img class="img-circle" src="img/adam.png" alt="Generic placeholder image" width="100" height="100">
+        <img class="img-circle" src="img/no_image.png" alt="Generic placeholder image" width="100" height="100">
         <h3>Adam KING</h3>
         <p>DOM CORLEONE</p>
         <p><a class="btn btn-default" href="#" role="button">Mehr zu Adam Bien &raquo;</a></p>

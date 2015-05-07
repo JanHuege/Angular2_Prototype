@@ -12,12 +12,23 @@ import {Article} from 'Article';
 export class ArticleController {
 
     articles;
+    list: Array<Article>;
 
     constructor(){
         var articleMock = new ArticleREST();
         this.articles = articleMock.getArticle();
+        this.list = [];
     }
 
+    addArticle(article: Article){
+        this.list.push(article);
+
+        console.log("Added to Cart");
+    }
+
+    logList(){
+        console.log(this.list[0].id)
+    }
 }
 
 bootstrap(ArticleController);
