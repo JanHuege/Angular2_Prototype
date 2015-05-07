@@ -8,7 +8,9 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 })
 @View({
     template: `
+    <div [style.background-color]="ref.value">
         <input #ref (keyup)="changeText(ref.value)">
+    </div>
     `,
     directives: []
 })
