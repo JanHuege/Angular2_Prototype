@@ -55,6 +55,25 @@ export class Cart{
         this.cart.splice(index, 1);
     }
 
+    // TODO Sinnvolle Implementierung und Fix finden warum for ... of nicht richtig geht nur mit +100
+    emptyCart(){
+        alert("Bestellung im Wert von " + this.calculateTotal() + "\u20AC erfolgreich! \n" +
+        this.toString());
+        for(var i = 0; i <this.cart.length + 100; i++){
+            for(var art of this.cart){
+                this.deleteFromCart(art.id);
+            }
+        }
+    }
+
+    toString(){
+        var s = "";
+        this.cart.forEach(function(article){
+            s += article.id + " " + article.name + " " + article.price + "\u20AC \n";
+        });
+        return s;
+    }
+
     doneTyping($event){
         if($event.which === 13){
             this.addToCart($event.target.value);
