@@ -25,10 +25,6 @@ export class ArticleController {
 
         console.log("Added to Cart");
     }
-
-    logList(){
-        console.log(this.list[0].id)
-    }
 }
 
 bootstrap(ArticleController);

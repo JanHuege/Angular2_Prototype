@@ -38,6 +38,13 @@ class MyCmp {
         return this.articles;
     }
 
+    blend(value:string){
+        if (value === "")
+            return "";
+        else
+            return "none";
+    }
+
     showIndex(): boolean{
         return false;
     }
