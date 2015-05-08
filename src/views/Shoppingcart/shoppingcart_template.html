@@ -1,0 +1,39 @@
+<!-- eigentlicher Warenkorb -->
+<div class="jumbotron" >
+<h2>Warenkorb</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nr.</th>
+        <th>Artikelname</th>
+        <th>Beschreibung</th>
+        <th>Preis</th>
+        <th><!-- Löschbutton--></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *for = "#art of cart">
+        <td>0</td>
+        <td>{{ art.name }}</td>
+        <td>{{ art.description }}</td>
+        <td>{{ art.price }} &#8364; </td>
+        <td><button type="button" class="btn glyphicon glyphicon-trash btn-danger" (click)="deleteFromCart(art.id)"></button></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><b>Wert des Warenkorbs: {{ calculateTotal() }} &#8364; </b></p>
+<!--
+<p><button type="submit" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)=""></button><br><br></p>
+-->
+<p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()"></button><br><br></p>
+
+<form class="form-inline">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" #texarticleid class="form-control" id="exampleInputAmount" placeholder="Produkt-Id">
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary glyphicon glyphicon-plus-sign" (click)="addToCart(texarticleid.value)" ></button>
+</form><br><br>
+</div>

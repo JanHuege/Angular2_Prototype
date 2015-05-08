@@ -1,10 +1,9 @@
-Status:
+*How to install:
 
-DONE:
-    - Mockup für RESTapi
-    - Grunddesign
+*run npm install fpr gulp-imagemin
 
-TODO:
-    - Import/Export anpassen für Shop (siehe testx.ts files und .html)
-    - gulpfile anpassen (tslint, concat, uglify usw testen)
-    - Routerrelease abwarten und ggf. einbinden
+*run gulp ready
+
+*run gulp shell
+
+*run gulp

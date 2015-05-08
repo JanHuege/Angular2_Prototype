@@ -41,10 +41,11 @@ export class Cart{
         }
     }
 
+    // TODO Arrowfunctions
     deleteFromCart(delid: number) {
         var index = 0;
         var gefunden = false;
-        this.cart.forEach(function(article){
+        this.cart.forEach(article =>{
             if (article.id == delid) {
                 gefunden = true;
             }
