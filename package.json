@@ -8,6 +8,10 @@
   },
   "author": "Christina B, Nazif K, Laith A, Jan H",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhaosTheory1012/Angular_Standard_01.git"
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-connect": "^2.2.0",

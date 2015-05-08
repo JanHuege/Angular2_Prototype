@@ -1,6 +1,6 @@
 * How to install:
 
-* run npm install fpr gulp-imagemin
+* run npm install
 
 * run gulp ready
 
