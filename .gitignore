@@ -47,3 +47,6 @@ Temporary Items
 
 # Directory for dependencies
 node_modules
+
+# build Directory
+build
