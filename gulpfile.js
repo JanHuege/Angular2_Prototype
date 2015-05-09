@@ -65,6 +65,7 @@ var gulp = require('gulp'),
         indexHtml: dir.src + '/views/index/*.html'
     };
 
+// Compiles .ts
 gulp.task('scripts', function(){
    var tsResult = gulp.src(data.ts)
        .pipe(ts({
@@ -94,6 +95,7 @@ gulp.task('watch', function(){
     // gulp.watch('src/*', ['scripts']);
 });
 
+// Webserver with livereload
 gulp.task('connect', function() {
     connect.server({
         // root: 'build',
@@ -188,6 +190,7 @@ gulp.task('tslint', function(){
         }))
 });
 
+// format files
 gulp.task('clang-format', function() {
     // --nocheck
     if (gutil.env.nocheck) {

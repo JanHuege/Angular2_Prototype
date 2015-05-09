@@ -14,7 +14,6 @@ export class EmployeeResource {
             age: 21,
             gehalt: 2500,
             role: "Admin"
-
         },
         {
             id: 2,
@@ -44,8 +43,8 @@ export class EmployeeResource {
 
     findPersonalById(id: number): Employee {
         var personal: Employee = null;
-        this.Personals.forEach(function(pers: Employee): void {
-            if (pers.id === id) {
+        this.Personals.forEach((pers: Employee) => {
+            if (pers.id == id) {
                 personal = pers;
             }
         });

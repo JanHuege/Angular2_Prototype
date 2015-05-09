@@ -1,5 +1,0 @@
-in tsconfig.json:
-"compilerOptions":{
-    "emitDecoratorMetadata": true,
-    ...
-    }
