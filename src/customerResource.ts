@@ -31,7 +31,7 @@ export class CustomerResource {
     findCustomerById(id: number): Customer {
         var customer: Customer = null;
         this.customers.forEach((cust: Customer) => {
-            if(cust.id == id) {
+            if (cust.id == id) {
                 customer = cust;
             }
         });

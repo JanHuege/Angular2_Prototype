@@ -27,7 +27,7 @@ export class ShoppingcartController {
 
     calculateTotal(): number {
         var val: number = 0;
-        this.cart.forEach((article: Article) =>{
+        this.cart.forEach((article: Article) => {
            val += article.price;
         });
         return Math.round(val * 100) / 100;
@@ -60,7 +60,7 @@ export class ShoppingcartController {
         alert("Bestellung im Wert von " + this.calculateTotal() + "\u20AC erfolgreich! \n" +
         this.toString());
         for (var i: number = 0; i < this.cart.length + 100; i++) {
-            for (var art: Article of this.cart) {
+            for (var art of this.cart) {
                 this.deleteFromCart(art.id);
             }
         }
