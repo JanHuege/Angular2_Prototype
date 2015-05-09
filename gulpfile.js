@@ -183,7 +183,9 @@ gulp.task('tslint', function(){
     gulp.src(data.ts)
         .pipe(cache('tslint'))
         .pipe(tslint())
-        .pipe(tslint.report('verbose'));
+        .pipe(tslint.report('verbose', {
+            emitError: false
+        }))
 });
 
 gulp.task('clang-format', function() {
