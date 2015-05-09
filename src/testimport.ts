@@ -16,7 +16,7 @@ import {Component, View, bootstrap} from 'angular2/angular2';
     `
 })
 /* tslint:enable */
-export class Import{
+export class Import {
     text: string;
 }
 

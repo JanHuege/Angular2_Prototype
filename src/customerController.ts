@@ -14,16 +14,15 @@ import {Customer} from 'customer';
 /* tslint:enable */
 export class CustomerController {
     customer: Customer;
-    customerMock: CustomerResource
+    customerMock: CustomerResource;
 
     constructor() {
         this.customerMock = new CustomerResource();
         this.customer = this.customerMock.getCustomerById(1);
     }
 
-    getCustomer(id: number) {
-        var customer = this.customerMock.findCustomerById(id);
-        this.customer = customer;
+    getCustomer(id: number): void {
+        this.customer = this.customerMock.findCustomerById(id);
     }
 }
 

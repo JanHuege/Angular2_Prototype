@@ -44,7 +44,7 @@ export class EmployeeResource {
 
     findPersonalById(id: number): Employee {
         var personal: Employee = null;
-        this.Personals.forEach(function(pers: Employee) {
+        this.Personals.forEach(function(pers: Employee): void {
             if (pers.id === id) {
                 personal = pers;
             }

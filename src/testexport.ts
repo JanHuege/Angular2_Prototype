@@ -16,14 +16,14 @@ import {Component, View, bootstrap} from 'angular2/angular2';
     directives: []
 })
 /* tslint:enable */
-export class Export{
+export class Export {
     textex: string;
 
-    constructor(){
+    constructor() {
         this.textex = "exportiert";
     }
 
-    changeText(value){
+    changeText(value: string): void {
         this.textex = value;
     }
 }

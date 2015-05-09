@@ -22,7 +22,7 @@ import {Export} from './testexport';
     directives: [Import, Export]
 })
 /* tslint:enable */
-class Test{
+class Test {
 
 }
 
