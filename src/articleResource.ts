@@ -17,6 +17,8 @@ export class ArticleResource {
     ];
 
     findArticleById(id: number): Article {
+        var article: Article = null;
+        this.articles.forEach(function(art: Article): void {
         var article = null;
         this.articles.forEach((art: Article) => {
             if (art.id === id) {

@@ -26,29 +26,29 @@ export class ShoppingcartController {
     }
 
     calculateTotal(): number {
-        var val = 0;
+        var val: number = 0;
         this.cart.forEach((article: Article) =>{
            val += article.price;
         });
-        return Math.round(val*100)/100;
+        return Math.round(val * 100) / 100;
     }
 
     addToCart(id: number): void {
-        var article = this.articleMock.findArticleById(id);
+        var article: Article = this.articleMock.findArticleById(id);
 
-        if(article){
+        if (article) {
             this.cart.push(article);
         }
     }
 
     deleteFromCart(delid: number): void {
-        var index = 0;
-        var gefunden = false;
+        var index: number = 0;
+        var gefunden: boolean = false;
         this.cart.forEach((article: Article) => {
             if (article.id === delid) {
                 gefunden = true;
             }
-            else if(!gefunden) {
+            else if (!gefunden) {
                 index++;
             }
         });
@@ -59,23 +59,23 @@ export class ShoppingcartController {
     emptyCart(): void {
         alert("Bestellung im Wert von " + this.calculateTotal() + "\u20AC erfolgreich! \n" +
         this.toString());
-        for(var i = 0; i <this.cart.length + 100; i++) {
-            for(var art of this.cart) {
+        for (var i: number = 0; i < this.cart.length + 100; i++) {
+            for (var art: Article of this.cart) {
                 this.deleteFromCart(art.id);
             }
         }
     }
 
     toString(): string {
-        var s = "";
-        this.cart.forEach(function(article){
+        var s: string = "";
+        this.cart.forEach(function(article: Article): void {
             s += article.id + " " + article.name + " " + article.price + "\u20AC \n";
         });
         return s;
     }
 
     doneTyping($event): void {
-        if ($event.which === 13){
+        if ($event.which === 13) {
             this.addToCart($event.target.value);
             $event.target.value = null;
         }

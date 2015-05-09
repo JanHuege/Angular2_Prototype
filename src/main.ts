@@ -40,13 +40,11 @@ class MyCmp {
         return this.articles;
     }
 
-    blend(value:string): String {
+    blend(value: string): String {
         if (value === "") {
             return "";
         }
-        else {
-            return "none";
-        }
+        return "none";
     }
 
     showIndex(): boolean {
