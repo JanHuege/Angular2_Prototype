@@ -34,7 +34,6 @@ var gulp = require('gulp'),
 
     data = {
         ts: [
-            //TODO add all files
             dir.src + '/*.ts'
         ],
         js: [
@@ -65,7 +64,6 @@ var gulp = require('gulp'),
         extern: dir.src + '/extern/*',
         indexHtml: dir.src + '/views/index/*.html'
     };
-
 
 gulp.task('scripts', function(){
    var tsResult = gulp.src(data.ts)
