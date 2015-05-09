@@ -65,7 +65,6 @@ var gulp = require('gulp'),
         indexHtml: dir.src + '/views/index/*.html'
     };
 
-
 gulp.task('scripts', function(){
    var tsResult = gulp.src(data.ts)
        .pipe(ts({
