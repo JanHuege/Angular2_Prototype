@@ -44,3 +44,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Directory for dependencies
+node_modules
+
+# build Directory
+build
