@@ -5,8 +5,7 @@
 import {Article} from './article';
 
 export class ArticleResource {
-
-    articles: Array<Article> = [
+    articles: Array < Article >= [
 
         new Article(1, 'Superunbequemer Stuhl', 999.89, 'Ein superunbequemer Stuhl.'),
         new Article(2, 'Haessliches Sofa', 22.81, 'Einfach Schrott.'),
@@ -15,12 +14,12 @@ export class ArticleResource {
         new Article(5, 'Kratziger Teppich', 344.55, 'Kratzt.'),
         new Article(6, 'Quietschende Tuer', 123.45, 'Mit Extrafunktion.')
 
-        ];
+    ];
 
-    findArticleById(id: number) : Article {
+    findArticleById(id: number): Article {
         var article = null;
         this.articles.forEach(function(art: Article) {
-            if(art.id == id) {
+            if (art.id == id) {
                 article = art;
             }
         });
@@ -34,8 +33,4 @@ export class ArticleResource {
     getArticle() {
         return this.articles;
     }
-
-
-
-
 }
