@@ -65,7 +65,7 @@ var gulp = require('gulp'),
         indexHtml: dir.src + '/views/index/*.html'
     };
 
-// Compiles .ts
+// Compiles .ts files into .js
 gulp.task('scripts', function(){
    var tsResult = gulp.src(data.ts)
        .pipe(ts({
