@@ -1,6 +1,4 @@
-/**
- * Created by Jan on 25.04.2015.
- */
+/// <reference path="./angular2/angular2.d.ts"/>
 /* tslint:disable */
 import {Component, bootstrap, View, For, If} from "angular2/angular2";
 import {ArticleResource} from './articleResource';
