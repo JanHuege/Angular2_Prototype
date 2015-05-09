@@ -27,7 +27,7 @@ export class ShoppingcartController {
 
     calculateTotal(): number {
         var val = 0;
-        this.cart.forEach(function(article){
+        this.cart.forEach((article: Article) =>{
            val += article.price;
         });
         return Math.round(val*100)/100;
@@ -41,11 +41,10 @@ export class ShoppingcartController {
         }
     }
 
-    // TODO Arrowfunctions
     deleteFromCart(delid: number): void {
         var index = 0;
         var gefunden = false;
-        this.cart.forEach(article => {
+        this.cart.forEach((article: Article) => {
             if (article.id === delid) {
                 gefunden = true;
             }
