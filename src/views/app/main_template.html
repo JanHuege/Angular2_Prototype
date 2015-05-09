@@ -1,0 +1,186 @@
+<!-- Navleiste Nazif -->
+<nav class="navbar navbar-collapse">
+    <div class="container">
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="Startseite"><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'" href="#Startseite">Startseite</a></li>
+                <li class="Artikel"><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = ''" href="#Artikel">Artikel</a></li>
+                <li class="Warenkorb"><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'" href="#Warenkorb">Warenkorb</a></li>
+                <li class="Kunde"><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = show(); personal.value = hide(); artikel.value = 'none'" href="#Profil">Profil</a></li>
+                <li><a href="#nachrichten">Nachrichten</a></li>
+                <li class="Einstellungen">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Einstellungen<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <!--
+                        <li><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = hide(); artikel.value = hide()">Index show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); employee.value = hide(); artikel.value = hide()">Warenkorb show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); employee.value = hide(); artikel.value = hide()">Kunde show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = show(); artikel.value = hide()">Employee show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = hide(); artikel.value = show()">Article Show</a></li>
+                        -->
+                        <!-- Workaround für Warenkorbimport -->
+                        <li><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'">Index show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = ''">Article Show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'">Warenkorb show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = show(); personal.value = hide(); artikel.value = 'none'">Kunde show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = show(); artikel.value = 'none'">Personal show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = hide(); personal.value = hide(); artikel.value = 'none'">Hide all</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email eingeben" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Passwort eingeben" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Anmelden</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div id="Seitenmitte">
+
+    <span #index></span>
+    <span #warenkorb></span>
+    <span #kunde></span>
+    <span #personal></span>
+    <span #artikel></span>
+
+    <div *If="!index.value">
+        <div class="jumbotron" >
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img class="first-slide" src="img/car1.jpg" alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Das nagelneue Modell "R&uumlckenschmerz"</h2>
+                                <p>Haben Sie keine Lust mehr auf sch&oumlne und begueme N&aumlchte? Dann kaufen Sie diesen Schrott</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Mehr erfahren</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="second-slide" src="img/car2.jpg" alt="Second slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>H&aumlsslige Wandm&oumlbel passen &uumlberall hin besonders in Ihre Wohnung</h2>
+                                <p>Wollen Sie keinen Besuch mehr oder haben Sie keine Lust mehr Ihre Nachbarn zu begegnen, dann sind Sie hier genau richtig</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">weitere Infos zu schreckhaften M&oumlbel</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="third-slide" src="img/car3.jpg" alt="Third slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Was soll das "Ding" darstellen?</h2>
+                                <p>Wir wissen es auch nicht</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Mehr Bilder</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Zurück</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Vor</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Warenkorb und Artikel/Katalog div ausblenden mit IF führt zum löschen des div wenn *IF = true -> Fehler für Import/Export -->
+    <!--
+    <div *If="warenkorb.value" style="text-align: center" >
+        <cart [cart]="art.list"></cart>
+    </div>
+
+    <div *If="artikel.value" style="text-align: center" >
+        <articlecontroller #art></articlecontroller>
+    </div>
+    -->
+
+    <div *If="kunde.value" style="text-align: center" >
+        <customercontroller></customercontroller>
+    </div>
+
+    <div *If="personal.value" style="text-align: center">
+        <employeecontroller></employeecontroller>
+    </div>
+
+
+    <!-- Workaround für Warenkorbimport -->
+    <div [style.display]="blend(warenkorb.value)" style="text-align: center">
+        <cart [cart]="art.list"></cart>
+    </div>
+
+    <div [style.display]="blend(artikel.value)"  style="text-align: center">
+        <articlecontroller #art></articlecontroller>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-lg-4">
+        <img class="img-circle" src="img/jan.jpg" alt="Generic placeholder image" width="100" height="100">
+        <h3>Admin</h3>
+        <p>Unser Admin Jan Huege der stets fuer Ordnung und Erfolg </br> in unserem Team sorgt. Seine Staerken: ALLES</p>
+        <p><a class="btn btn-default" href="#" role="button">Mehr zu Jan &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="img-circle" src="img/laith.jpg" alt="Generic placeholder image" width="100" height="100">
+        <h3>CO - Pilot</h3>
+        <p> Dieser Junge attraktive Mann sorgt nicht nur fuer ein L&aumlcheln </br> in der Gruppe er ist auch der Frauenschwarm aller Beteiligten</p>
+        <p><a class="btn btn-default" href="#" role="button">Mehr zu Laith &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="img-circle" src="img/nazif.jpg" alt="Generic placeholder image" width="100" height="100" >
+        <h3>CEO</h3>
+        <p>Das ist unser Vorstandvorsitzender Nazif Prince Fizan der f&uumlr Ruhe </br> und Ordnung sorgt</p>
+        <p><a class="btn btn-default" href="#" role="button">Mehr zu Nazif &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="img-circle" src="img/christina.jpg" alt="Generic placeholder image" width="100" height="100">
+        <h3>President Chief</h3>
+        <p>Die Mutter unserer Gruppe das Salz f&uumlr unsere Suppe.</br>Unser ein und alles </p>
+        <p><a class="btn btn-default" href="#" role="button">Mehr zu Christina &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="img-circle" src="img/no_image.png" alt="Generic placeholder image" width="100" height="100">
+        <h3>SCRUM - Master</h3>
+        <p>Er ist das Team hinter unserem Team</p>
+        <p><a class="btn btn-default" href="#" role="button">Mehr zu J&uumlrgen &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <img class="img-circle" src="img/no_image.png" alt="Generic placeholder image" width="100" height="100">
+        <h3>Adam KING</h3>
+        <p>DOM CORLEONE</p>
+        <p><a class="btn btn-default" href="#" role="button">Mehr zu Adam Bien &raquo;</a></p>
+    </div>
+</div>
+
+
+<footer>
+    <p>&copy; JavaRockstars UnBeQuem  </p>
+</footer>
