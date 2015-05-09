@@ -1,9 +1,9 @@
 /**
  * Created by Jan and Laith on 27.04.2015.
  */
-
+/* tslint:disable */
 import {Customer} from 'customer';
-
+/* tslint:enable */
 export class CustomerResource {
 
     customers: Array<Customer> = [

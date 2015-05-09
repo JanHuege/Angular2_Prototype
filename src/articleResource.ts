@@ -1,9 +1,9 @@
 /**
  * Created by Christina on 26.04.2015.
  */
-
+/* tslint:disable */
 import {Article} from './article';
-
+/* tslint:enable */
 export class ArticleResource {
     articles: Array <Article> = [
 

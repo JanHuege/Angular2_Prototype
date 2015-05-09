@@ -1,5 +1,5 @@
 /// <reference path="./angular2/angular2.d.ts"/>
-
+/* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {ArticleResource} from './articleResource';
 import {Article} from 'article';
@@ -14,6 +14,7 @@ import {Article} from 'article';
     templateUrl: "html_templates/shoppingcart_template.html",
     directives: [For]
 })
+/* tslint:enable */
 export class ShoppingcartController {
 
     cart: Array <Article>;

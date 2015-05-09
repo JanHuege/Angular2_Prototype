@@ -1,5 +1,5 @@
 /// <reference path="./angular2/angular2.d.ts"/>
-
+/* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {CustomerResource} from './customerResource';
 import {Customer} from 'customer';
@@ -11,6 +11,7 @@ import {Customer} from 'customer';
     templateUrl: "html_templates/customer_template.html",
     directives: [For]
 })
+/* tslint:enable */
 export class CustomerController {
     customer: Customer;
     customerMock: CustomerResource

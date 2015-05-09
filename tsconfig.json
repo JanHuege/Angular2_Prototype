@@ -15,7 +15,7 @@
         "./src/customer.ts",
         "./src/customerResource.ts",
         "./src/employee.ts",
-        "./src/employeesController.ts",
-        "./src/employeesResource.ts"
+        "./src/employeeController.ts",
+        "./src/employeeResource.ts"
     ]
 }

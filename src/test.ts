@@ -1,6 +1,7 @@
 /**
  * Created by Jan on 07.05.2015.
  */
+/* tslint:disable */
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {Import} from './testimport';
 import {Export} from './testexport';
@@ -20,6 +21,7 @@ import {Export} from './testexport';
     `,
     directives: [Import, Export]
 })
+/* tslint:enable */
 class Test{
 
 }

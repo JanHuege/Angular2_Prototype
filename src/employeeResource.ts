@@ -1,9 +1,9 @@
 /**
  * Created by Nazif on 28.04.2015.
  */
-
+/* tslint:disable */
 import {Employee} from 'employee';
-
+/* tslint:enable */
 export class EmployeeResource {
 
     Personals: Array<Employee> = [

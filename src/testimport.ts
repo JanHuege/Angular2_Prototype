@@ -1,6 +1,7 @@
 /**
  * Created by Jan on 07.05.2015.
  */
+/* tslint:disable */
 import {Component, View, bootstrap} from 'angular2/angular2';
 
 @Component({
@@ -14,6 +15,7 @@ import {Component, View, bootstrap} from 'angular2/angular2';
         <h1>{{ text }}</h1>
     `
 })
+/* tslint:enable */
 export class Import{
     text: string;
 }

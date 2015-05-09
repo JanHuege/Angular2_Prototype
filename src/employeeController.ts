@@ -1,7 +1,7 @@
 /// <reference path="./angular2/angular2.d.ts"/>
-
+/* tslint:disable */
 import {Component,View,bootstrap,For,If} from 'angular2/angular2';
-import {EmployeeResource} from './employeesResource';
+import {EmployeeResource} from './employeeResource';
 import {Employee} from 'employee';
 
 @Component ({
@@ -12,7 +12,7 @@ import {Employee} from 'employee';
     templateUrl: "html_templates/employee_template.html",
     directives: [For]
 })
-
+/* tslint:enable */
 export class EmployeeController {
     employee: Employee;
     employeeMock: EmployeeResource = new EmployeeResource();

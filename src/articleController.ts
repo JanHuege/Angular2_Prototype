@@ -1,11 +1,12 @@
 /// <reference path="./angular2/angular2.d.ts"/>
-
+/* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {ArticleResource} from './articleResource';
 import {Article} from 'article';
 
 @Component({selector: 'articlecontroller'})
 @View({templateUrl: "html_templates/articles_template.html", directives: [For]})
+/* tslint:enable */
 export class ArticleController {
     articles: Array<Article>;
     list: Array<Article>;

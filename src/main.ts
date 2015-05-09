@@ -1,12 +1,13 @@
 /**
  * Created by Jan on 25.04.2015.
  */
+/* tslint:disable */
 import {Component, bootstrap, View, For, If} from "angular2/angular2";
 import {ArticleResource} from './articleResource';
 import {ArticleController} from './articleController';
 import {ShoppingcartController} from './shoppingcartController';
 import {CustomerController} from './customerController';
-import {EmployeeController} from './employeesController';
+import {EmployeeController} from './employeeController';
 // not used
 import {Article} from 'article';
 
@@ -18,6 +19,7 @@ import {Article} from 'article';
     templateUrl: "html_templates/main_template.html",
     directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, EmployeeController]
 })
+/* tslint:enable */
 class MyCmp {
     article: Article;
     // not used
