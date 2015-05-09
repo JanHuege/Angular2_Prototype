@@ -8,6 +8,7 @@
     "files": [
         "./src/main.ts",
         "./src/articleResource.ts",
+        "./src/articleController.ts",
         "./src/article.ts",
         "./src/shoppingcartController.ts",
         "./src/customerController.ts",

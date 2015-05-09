@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     newer = require('gulp-newer'),
     tslint = require('gulp-tslint'),
     cache = require('gulp-cached'),
+    format = require('gulp-clang-format'),
 
     dir = {
         src: 'src',
@@ -185,6 +186,28 @@ gulp.task('tslint', function(){
         .pipe(cache('tslint'))
         .pipe(tslint())
         .pipe(tslint.report('verbose'));
+});
+
+gulp.task('clang-format', function() {
+    // --nocheck
+    if (gutil.env.nocheck) {
+        return;
+    }
+
+    // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+    return gulp.src(data.ts)
+        // clang ist ein C/C++/Objective-C Compiler des Projekts LLVM http://www.llvm.org
+        // Formatierungseinstellungen in .clang-format:
+        // Google (default) http://google-styleguide.googlecode.com/svn/trunk/cppguide.html
+        // LLVM http://llvm.org/docs/CodingStandards.html
+        // Chromium http://www.chromium.org/developers/coding-style
+        // Mozilla https://developer.mozilla.org/en-US/docs/Developer_Guide/Coding_Style
+        // WebKit http://www.webkit.org/coding/coding-style.html
+        .pipe(format.checkFormat('file'))
+        .on('warning', function(e) {
+            process.stdout.write(e.message);
+            process.exit(1);
+        });
 });
 
 // Start Server with livereload and watchtask
