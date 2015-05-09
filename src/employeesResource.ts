@@ -9,61 +9,61 @@ export class PersonalResource {
     Personals: Array<Personal> = [
         {
             id: 1,
-            name: 'Huege',
-            firstname: 'Jan',
+            name: "Huege",
+            firstname: "Jan",
             age: 21,
             gehalt: 2500,
-            role: 'Admin'
+            role: "Admin"
 
         },
         {
             id: 2,
-            name: 'Braun',
-            firstname: 'Christina',
+            name: "Braun",
+            firstname: "Christina",
             age: 22,
             gehalt: 2200,
-            role: 'Mitarbeiter'
+            role: "Mitarbeiter"
         },
         {
             id: 3,
-            name: 'Al - Khazrage',
-            firstname: 'Laith',
+            name: "Al - Khazrage",
+            firstname: "Laith",
             age: 20,
             gehalt: 2200,
-            role: 'Mitarbeiter'
+            role: "Mitarbeiter"
         },
         {
             id: 4,
-            name: 'Karayel',
-            firstname: 'Nazif',
+            name: "Karayel",
+            firstname: "Nazif",
             age: 21,
             gehalt: 2200,
-            role: 'Mitarbeiter'
+            role: "Mitarbeiter"
         }
     ];
 
-    findPersonalById(id: number) : Personal {
-        var personal = null;
+    findPersonalById(id: number): Personal {
+        var personal: Personal = null;
         this.Personals.forEach(function(pers: Personal) {
-            if(pers.id == id) {
+            if (pers.id === id) {
                 personal = pers;
             }
         });
         return personal;
     }
 
-    getPersonalById(id: number) {
+    getPersonalById(id: number): Personal {
         return {
             id: id,
-            name: 'Mustermann',
-            firstname: 'Max',
+            name: "Mustermann",
+            firstname: "Max",
             age: 35,
             gehalt: 0,
-            role: 'Mitarbeiter'
-        }
+            role: "Mitarbeiter"
+        };
     }
 
-    getPersonals() {
+    getPersonals(): Array<Personal> {
         return this.Personals;
     }
 }

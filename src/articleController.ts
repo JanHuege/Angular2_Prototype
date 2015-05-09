@@ -7,16 +7,17 @@ import {Article} from 'article';
 @Component({selector: 'articlecontroller'})
 @View({templateUrl: "html_templates/articles_template.html", directives: [For]})
 export class ArticleController {
-    articles;
+    articles: Array<Article>;
     list: Array<Article>;
+    articleMock: ArticleResource;
 
     constructor() {
-        var articleMock = new ArticleResource();
-        this.articles = articleMock.getArticle();
+        this.articleMock = new ArticleResource();
+        this.articles = this.articleMock.getArticles();
         this.list = [];
     }
 
-    addArticle(article: Article) {
+    addArticle(article: Article): void {
         this.list.push(article);
 
         console.log("Added to Cart");

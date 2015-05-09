@@ -13,18 +13,16 @@ import {Personal} from 'employee';
     directives: [For]
 })
 
-export class PersonalController{
+export class PersonalController {
     personal: Personal;
+    personalMock: PersonalResource = new PersonalResource();
 
-    constructor(){
-        var PersonalMock = new PersonalResource();
-        this.personal = PersonalMock.getPersonalById(1337);
+    constructor() {
+        this.personal = this.personalMock.getPersonalById(1337);
     }
 
-    getPersonal(id: number){
-        var PersonalMock = new PersonalResource();
-        var personal = PersonalMock.findPersonalById(id);
-        this.personal = personal;
+    getPersonal(id: number): void {
+        this.personal = this.personalMock.findPersonalById(id);
     }
 }
 

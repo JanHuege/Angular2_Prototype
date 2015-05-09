@@ -11,17 +11,17 @@ import {Customer} from 'customer';
     templateUrl: "html_templates/customer_template.html",
     directives: [For]
 })
-export class CustomerController{
+export class CustomerController {
     customer: Customer;
+    customerMock: CustomerResource
 
-    constructor(){
-        var CustomerMock = new CustomerResource();
-        this.customer = CustomerMock.getCustomerById(1);
+    constructor() {
+        this.customerMock = new CustomerResource();
+        this.customer = this.customerMock.getCustomerById(1);
     }
 
-    getCustomer(id: number){
-        var CustomerMock = new CustomerResource();
-        var customer = CustomerMock.findCustomerById(id);
+    getCustomer(id: number) {
+        var customer = this.customerMock.findCustomerById(id);
         this.customer = customer;
     }
 }

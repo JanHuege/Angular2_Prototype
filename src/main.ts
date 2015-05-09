@@ -19,7 +19,7 @@ import {Article} from 'article';
     directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, PersonalController]
 })
 class MyCmp {
-    article;
+    article: Article;
     // not used
     articles: Array<Article>;
 
@@ -29,35 +29,37 @@ class MyCmp {
    }
 
     // not used
-    setArticles(list: Array<Article>){
+    setArticles(list: Array<Article>): void {
         this.articles = list;
     }
 
-    //not used
-    getArticles(){
+    // not used
+    getArticles(): Array<Article> {
         return this.articles;
     }
 
-    blend(value:string){
-        if (value === "")
+    blend(value:string): String {
+        if (value === "") {
             return "";
-        else
+        }
+        else {
             return "none";
+        }
     }
 
-    showIndex(): boolean{
+    showIndex(): boolean {
         return false;
     }
 
-    hideIndex(): boolean{
+    hideIndex(): boolean {
         return true;
     }
 
-    show(): boolean{
+    show(): boolean {
         return true;
     }
 
-    hide(): boolean{
+    hide(): boolean {
         return false;
     }
 

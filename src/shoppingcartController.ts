@@ -14,17 +14,17 @@ import {Article} from 'article';
     templateUrl: "html_templates/shoppingcart_template.html",
     directives: [For]
 })
-export class ShoppingcartController{
+export class ShoppingcartController {
 
     cart: Array <Article>;
-    articleMock;
+    articleMock: ArticleResource;
 
-    constructor(){
+    constructor() {
         this.articleMock = new ArticleResource();
         this.cart = [];
     }
 
-    calculateTotal(){
+    calculateTotal(): number {
         var val = 0;
         this.cart.forEach(function(article){
            val += article.price;
@@ -32,7 +32,7 @@ export class ShoppingcartController{
         return Math.round(val*100)/100;
     }
 
-    addToCart(id: number){
+    addToCart(id: number): void {
         var article = this.articleMock.findArticleById(id);
 
         if(article){
@@ -41,14 +41,14 @@ export class ShoppingcartController{
     }
 
     // TODO Arrowfunctions
-    deleteFromCart(delid: number) {
+    deleteFromCart(delid: number): void {
         var index = 0;
         var gefunden = false;
-        this.cart.forEach(article =>{
-            if (article.id == delid) {
+        this.cart.forEach(article => {
+            if (article.id === delid) {
                 gefunden = true;
             }
-            else if(!gefunden){
+            else if(!gefunden) {
                 index++;
             }
         });
@@ -56,17 +56,17 @@ export class ShoppingcartController{
     }
 
     // TODO Sinnvolle Implementierung und Fix finden warum for ... of nicht richtig geht nur mit +100
-    emptyCart(){
+    emptyCart(): void {
         alert("Bestellung im Wert von " + this.calculateTotal() + "\u20AC erfolgreich! \n" +
         this.toString());
-        for(var i = 0; i <this.cart.length + 100; i++){
-            for(var art of this.cart){
+        for(var i = 0; i <this.cart.length + 100; i++) {
+            for(var art of this.cart) {
                 this.deleteFromCart(art.id);
             }
         }
     }
 
-    toString(){
+    toString(): string {
         var s = "";
         this.cart.forEach(function(article){
             s += article.id + " " + article.name + " " + article.price + "\u20AC \n";
@@ -74,8 +74,8 @@ export class ShoppingcartController{
         return s;
     }
 
-    doneTyping($event){
-        if($event.which === 13){
+    doneTyping($event): void {
+        if ($event.which === 13){
             this.addToCart($event.target.value);
             $event.target.value = null;
         }
@@ -84,3 +84,4 @@ export class ShoppingcartController{
 }
 
 bootstrap(ShoppingcartController);
+

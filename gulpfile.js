@@ -34,7 +34,6 @@ var gulp = require('gulp'),
 
     data = {
         ts: [
-            //TODO add all files
             dir.src + '/*.ts'
         ],
         js: [
