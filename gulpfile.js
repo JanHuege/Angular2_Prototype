@@ -1,19 +1,21 @@
 // Include gulp
-var gulp = require('gulp');
+var gulp = require('gulp'),
 // var ts = require('gulp-typescript');
 // var merge = require('merge2');
-var shell = require('gulp-shell');
-var connect = require('gulp-connect');
-var minifyHTML = require('gulp-minify-html');
-var imagemin = require('gulp-imagemin');
-var gutil = require('gulp-util');
-var newer = require('gulp-newer');
+    shell = require('gulp-shell'),
+    connect = require('gulp-connect'),
+    minifyHTML = require('gulp-minify-html'),
+    imagemin = require('gulp-imagemin'),
+    gutil = require('gulp-util'),
+    newer = require('gulp-newer'),
+    tslint = require('gulp-tslint'),
+    cache = require('gulp-cached'),
 
     dir = {
         src: 'src',
         build: 'build',
         npm : 'node_modules'
-    };
+    },
 
     subdir = {
         js: dir.build + '/scripts',
@@ -25,12 +27,15 @@ var newer = require('gulp-newer');
         img: dir.build + '/img',
         extern: dir.build + '/extern',
         app: dir.build + '/app'
-    };
+    },
 
     data = {
         ts: [
-            dir.src + '/scripts/',
-            dir.src + '/scripts/'
+            dir.src + '/Article.ts',
+            dir.src + '/ArticleController.ts',
+            dir.src + '/ArticleREST.ts',
+            dir.src + '/Customer.ts'
+            //TODO add all files
         ],
         js: [
             dir.src + ''
@@ -55,7 +60,7 @@ var newer = require('gulp-newer');
         mincss: dir.src + '/style/css/*.min.css',
         extern: dir.src + '/extern/*',
         indexHtml: dir.src + '/views/index/*.html'
-    }
+    };
 
 /*
 gulp.task('scripts', function(){
@@ -158,6 +163,18 @@ gulp.task('ready', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern
             .pipe(newer(subdir.extern))
             .pipe(gulp.dest(subdir.extern));
     });
+
+gulp.task('tslint', function(){
+    // --nocheck
+    if (gutil.env.nocheck) {
+        return;
+    }
+
+    gulp.src(data.ts)
+        .pipe(cache('tslint'))
+        .pipe(tslint())
+        .pipe(tslint.report('verbose'));
+});
 
 // Start Server with livereload and watchtask
 gulp.task('default',['connect', 'watch']);
