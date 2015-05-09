@@ -6,7 +6,7 @@ import {ArticleResource} from './articleResource';
 import {ArticleController} from './articleController';
 import {ShoppingcartController} from './shoppingcartController';
 import {CustomerController} from './customerController';
-import {PersonalController} from './employeesController';
+import {EmployeeController} from './employeesController';
 // not used
 import {Article} from 'article';
 
@@ -16,7 +16,7 @@ import {Article} from 'article';
 })
 @View({
     templateUrl: "html_templates/main_template.html",
-    directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, PersonalController]
+    directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, EmployeeController]
 })
 class MyCmp {
     article: Article;

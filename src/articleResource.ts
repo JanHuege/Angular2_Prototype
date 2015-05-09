@@ -5,7 +5,7 @@
 import {Article} from './article';
 
 export class ArticleResource {
-    articles: Array < Article >= [
+    articles: Array <Article> = [
 
         new Article(1, "Superunbequemer Stuhl", 999.89, "Ein superunbequemer Stuhl."),
         new Article(2, "Haessliches Sofa", 22.81, "Einfach Schrott."),

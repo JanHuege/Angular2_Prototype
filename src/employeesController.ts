@@ -1,29 +1,29 @@
 /// <reference path="./angular2/angular2.d.ts"/>
 
 import {Component,View,bootstrap,For,If} from 'angular2/angular2';
-import {PersonalResource} from './employeesResource';
-import {Personal} from 'employee';
+import {EmployeeResource} from './employeesResource';
+import {Employee} from 'employee';
 
 @Component ({
-    selector: 'personalcontroller'
+    selector: 'employeecontroller'
 })
 
 @View ({
-    templateUrl: "html_templates/personal_template.html",
+    templateUrl: "html_templates/employee_template.html",
     directives: [For]
 })
 
-export class PersonalController {
-    personal: Personal;
-    personalMock: PersonalResource = new PersonalResource();
+export class EmployeeController {
+    employee: Employee;
+    employeeMock: EmployeeResource = new EmployeeResource();
 
     constructor() {
-        this.personal = this.personalMock.getPersonalById(1337);
+        this.employee = this.employeeMock.getPersonalById(1337);
     }
 
     getPersonal(id: number): void {
-        this.personal = this.personalMock.findPersonalById(id);
+        this.employee = this.employeeMock.findPersonalById(id);
     }
 }
 
-bootstrap(PersonalController);
+bootstrap(EmployeeController);

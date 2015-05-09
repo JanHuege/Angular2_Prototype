@@ -1,7 +1,7 @@
 /**
  * Created by Nazif on 28.04.2015.
  */
-export class Personal {
+export class Employee {
     id: number;
     name: string;
     firstname: string;

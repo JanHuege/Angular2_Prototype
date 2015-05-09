@@ -2,11 +2,11 @@
  * Created by Nazif on 28.04.2015.
  */
 
-import {Personal} from 'employee';
+import {Employee} from 'employee';
 
-export class PersonalResource {
+export class EmployeeResource {
 
-    Personals: Array<Personal> = [
+    Personals: Array<Employee> = [
         {
             id: 1,
             name: "Huege",
@@ -42,9 +42,9 @@ export class PersonalResource {
         }
     ];
 
-    findPersonalById(id: number): Personal {
-        var personal: Personal = null;
-        this.Personals.forEach(function(pers: Personal) {
+    findPersonalById(id: number): Employee {
+        var personal: Employee = null;
+        this.Personals.forEach(function(pers: Employee) {
             if (pers.id === id) {
                 personal = pers;
             }
@@ -52,7 +52,7 @@ export class PersonalResource {
         return personal;
     }
 
-    getPersonalById(id: number): Personal {
+    getPersonalById(id: number): Employee {
         return {
             id: id,
             name: "Mustermann",
@@ -63,7 +63,7 @@ export class PersonalResource {
         };
     }
 
-    getPersonals(): Array<Personal> {
+    getPersonals(): Array<Employee> {
         return this.Personals;
     }
 }
