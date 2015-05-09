@@ -1,7 +1,7 @@
 // Include gulp
 var gulp = require('gulp'),
-// var ts = require('gulp-typescript');
-// var merge = require('merge2');
+    ts = require('gulp-typescript'),
+    merge = require('merge2'),
     shell = require('gulp-shell'),
     connect = require('gulp-connect'),
     minifyHTML = require('gulp-minify-html'),
@@ -19,6 +19,8 @@ var gulp = require('gulp'),
 
     subdir = {
         js: dir.build + '/scripts',
+        dts: dir.build + '/definitions',
+        ng2: dir.build + '/angular2',
         html: dir.build + '/html_templates',
         minhtml: dir.build + '/min_html',
         css: dir.build + '/style/css',
@@ -31,11 +33,8 @@ var gulp = require('gulp'),
 
     data = {
         ts: [
-            dir.src + '/Article.ts',
-            dir.src + '/ArticleController.ts',
-            dir.src + '/ArticleREST.ts',
-            dir.src + '/Customer.ts'
             //TODO add all files
+            dir.src + '/*.ts'
         ],
         js: [
             dir.src + ''
@@ -44,13 +43,17 @@ var gulp = require('gulp'),
             dir.src + '/style/js/*.min.js',
             dir.src + '/style/js/*.js'
         ],
+        angular2: [
+            dir.src + '/angular2/*.js',
+            dir.src + '/angular2/*.d.ts'
+        ],
         cssOther: [
             dir.src + '/style/css/*.css.map'
         ],
         html: [
-            dir.src + '/views/Articles/*.html',
-            dir.src + '/views/Customers/*.html',
-            dir.src + '/views/Shoppingcart/*.html',
+            dir.src + '/views/articles/*.html',
+            dir.src + '/views/customers/*.html',
+            dir.src + '/views/shoppingcart/*.html',
             dir.src + '/views/employees/*.html',
             dir.src + '/views/app/*.html'
         ],
@@ -62,22 +65,22 @@ var gulp = require('gulp'),
         indexHtml: dir.src + '/views/index/*.html'
     };
 
-/*
+
 gulp.task('scripts', function(){
-   var tsResult = gulp.src('src/*.ts')
+   var tsResult = gulp.src(data.ts)
        .pipe(ts({
            module: 'amd',
+           target: 'es5',
            declarationFiles: true,
            noExternalResolve: true,
            typescript: require('typescript')
        }));
 
     return merge([
-        tsResult.dts.pipe(gulp.dest('build/definitions')),
-        tsResult.js.pipe(gulp.dest('build/js'))
+        tsResult.dts.pipe(gulp.dest(subdir.dts)),
+        tsResult.js.pipe(gulp.dest(subdir.js))
     ])
 });
-*/
 
 // Call once to compile all .ts files before running gulp default for the first time
 gulp.task('shell',shell.task([
@@ -86,7 +89,7 @@ gulp.task('shell',shell.task([
 
 // Watching all .ts and .html files
 gulp.task('watch', function(){
-    gulp.watch('src/*', ['shell']);
+    gulp.watch('src/*', ['scripts']);
     gulp.watch(data.html, ['minify-htmlviews']);
     gulp.watch(data.indexHtml, ['minify-index-html']);
     // gulp.watch('src/*', ['scripts']);
@@ -100,7 +103,8 @@ gulp.task('connect', function() {
 });
 
 // Use to setup all needed data
-gulp.task('ready', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern','copyMINCSS']);
+// Options --prod for imageminification
+gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern','copyMINCSS','copyAngular2']);
 
     gulp.task('minify', ['minify-htmlviews','minify-index-html','imagemin']);
 
@@ -158,12 +162,19 @@ gulp.task('ready', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern
             .pipe(gulp.dest(subdir.css));
     });
 
+    gulp.task('copyAngular2', function(){
+        return gulp.src(data.angular2)
+            .pipe(newer(subdir.ng2))
+            .pipe(gulp.dest(subdir.ng2));
+    });
+
     gulp.task('copyExtern', function(){
         return gulp.src(data.extern)
             .pipe(newer(subdir.extern))
             .pipe(gulp.dest(subdir.extern));
     });
 
+// Check .ts files for mistakes
 gulp.task('tslint', function(){
     // --nocheck
     if (gutil.env.nocheck) {

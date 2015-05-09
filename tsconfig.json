@@ -13,8 +13,8 @@
         "./src/customerController.ts",
         "./src/customer.ts",
         "./src/customerResource.ts",
-        "./src/personal.ts",
-        "./src/personalController.ts",
-        "./src/personalResource.ts"
+        "./src/employee.ts",
+        "./src/employeesController.ts",
+        "./src/employeesResource.ts"
     ]
 }

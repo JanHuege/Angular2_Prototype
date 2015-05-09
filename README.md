@@ -2,8 +2,8 @@
 
 * run npm install
 
-* run gulp ready
+* run gulp build --prod
 
-* run gulp shell
+* run gulp scripts
 
 * run gulp

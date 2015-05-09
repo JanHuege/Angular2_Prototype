@@ -2,7 +2,7 @@
  * Created by Nazif on 28.04.2015.
  */
 
-import {Personal} from 'personal';
+import {Personal} from 'employee';
 
 export class PersonalResource {
 

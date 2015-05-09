@@ -6,7 +6,7 @@ import {ArticleResource} from './articleResource';
 import {ArticleController} from './articleController';
 import {ShoppingcartController} from './shoppingcartController';
 import {CustomerController} from './customerController';
-import {PersonalController} from './personalController';
+import {PersonalController} from './employeesController';
 // not used
 import {Article} from 'article';
 

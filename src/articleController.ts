@@ -1,3 +1,5 @@
+/// <reference path="./angular2/angular2.d.ts"/>
+
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {ArticleResource} from './articleResource';
 import {Article} from 'article';

@@ -1,6 +1,5 @@
-/**
- * Created by Jan and Laith on 27.04.2015.
- */
+/// <reference path="./angular2/angular2.d.ts"/>
+
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {CustomerResource} from './customerResource';
 import {Customer} from 'customer';
@@ -9,20 +8,6 @@ import {Customer} from 'customer';
     selector: 'customercontroller'
 })
 @View({
-    /*
-    template: `
-        <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>
-        <p>
-            <h3>Vorname: {{ customer.firstname }}</h3><br>
-            <h3>Nachname: {{ customer.name }}</h3><br>
-            <h3>Alter: {{ customer.age }}</h3><br>
-        </p>
-        <p>
-            <input #customerid/>
-            <button (click)="getCustomer(customerid.value)">Finde Kunden</button>
-        </p>
-    `,
-    */
     templateUrl: "html_templates/customer_template.html",
     directives: [For]
 })

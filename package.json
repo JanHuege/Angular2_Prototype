@@ -24,7 +24,7 @@
     "gulp-typescript": "*",
     "gulp-util": "^3.0.4",
     "merge2": "^0.3.5",
-    "typescript": "Microsoft/Typescript"
+    "typescript": "1.5.0-beta"
   },
   "dependencies": {}
 }

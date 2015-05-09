@@ -1,10 +1,8 @@
-/**
- * Created by Nazif on 28.04.2015.
- */
+/// <reference path="./angular2/angular2.d.ts"/>
 
 import {Component,View,bootstrap,For,If} from 'angular2/angular2';
-import {PersonalResource} from './personalResource';
-import {Personal} from 'personal';
+import {PersonalResource} from './employeesResource';
+import {Personal} from 'employee';
 
 @Component ({
     selector: 'personalcontroller'
