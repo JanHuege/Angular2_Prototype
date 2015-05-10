@@ -76,7 +76,7 @@ gulp.task('scripts', function(){
            module: 'amd',
            target: 'es5',
            declarationFiles: true,
-           noExternalResolve: true,
+           noExternalResolve: false,
            typescript: require('typescript')
        }));
 
