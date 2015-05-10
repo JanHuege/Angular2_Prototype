@@ -74,14 +74,6 @@ export class ShoppingcartController {
         return s;
     }
 
-    doneTyping($event): void {
-        if ($event.which === 13) {
-            this.addToCart($event.target.value);
-            $event.target.value = null;
-        }
-    }
-
 }
 
 bootstrap(ShoppingcartController);
-
