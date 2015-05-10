@@ -3,23 +3,25 @@
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {ArticleResource} from './articleResource';
 import {Article} from 'article';
+import {ShoppingcartService} from '../shoppingcartService/shoppingcartService';
 
-@Component({selector: 'articlecontroller'})
+@Component({
+    selector: 'articlecontroller',
+    componentServices: [ShoppingcartService]
+})
 @View({templateUrl: "html_templates/articles_template.html", directives: [For]})
 /* tslint:enable */
 export class ArticleController {
     articles: Array<Article>;
-    list: Array<Article>;
     articleMock: ArticleResource;
 
     constructor() {
         this.articleMock = new ArticleResource();
         this.articles = this.articleMock.getArticles();
-        this.list = [];
     }
 
     addArticle(article: Article): void {
-        this.list.push(article);
+        ShoppingcartService.addToCart(article.id);
 
         console.log("Added to Cart");
     }

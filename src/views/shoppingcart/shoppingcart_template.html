@@ -7,17 +7,19 @@
         <th>Nr.</th>
         <th>Artikelname</th>
         <th>Beschreibung</th>
+        <th>Anzahl</th>
         <th>Preis</th>
         <th><!-- Löschbutton--></th>
     </tr>
     </thead>
     <tbody>
-    <tr *for = "#art of cart">
+    <tr *for = "#item of cart">
         <td>0</td>
-        <td>{{ art.name }}</td>
-        <td>{{ art.description }}</td>
-        <td>{{ art.price }} &#8364; </td>
-        <td><button type="button" class="btn glyphicon glyphicon-trash btn-danger" (click)="deleteFromCart(art.id)"></button></td>
+        <td>{{ item.article.name }}</td>
+        <td>{{ item.article.description }}</td>
+        <td> {{ item.quantity }}</td>
+        <td>{{ item.getTotalPrice() }} &#8364; </td>
+        <td><button type="button" class="btn glyphicon glyphicon-trash btn-danger" (click)="deleteFromCart(item.article.id)"></button></td>
     </tr>
     </tbody>
 </table>
