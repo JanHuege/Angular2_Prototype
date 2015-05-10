@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KhaosTheory1012/Angular_Standard_01.git"
+    "url": "https://github.com/KhaosTheory1012/Angular2_Prototype.git"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
