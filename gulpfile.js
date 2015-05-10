@@ -19,7 +19,7 @@ var gulp = require('gulp'),
     },
 
     subdir = {
-        js: dir.build + '/scripts',
+        js: dir.build + '/services',
         dts: dir.build + '/definitions',
         ng2: dir.build + '/angular2',
         html: dir.build + '/html_templates',
@@ -34,7 +34,11 @@ var gulp = require('gulp'),
 
     data = {
         ts: [
-            dir.src + '/*.ts'
+            dir.src + '/scripts/articleService/*.ts',
+            dir.src + '/scripts/customerService/*.ts',
+            dir.src + '/scripts/shoppingcartService/*.ts',
+            dir.src + '/scripts/employeeService/*.ts',
+            dir.src + '/scripts/main.ts'
         ],
         js: [
             dir.src + ''
@@ -62,12 +66,12 @@ var gulp = require('gulp'),
         css: dir.src + '/style/css/*.css',
         mincss: dir.src + '/style/css/*.min.css',
         extern: dir.src + '/extern/*',
-        indexHtml: dir.src + '/views/index/*.html'
+        indexHtml: dir.src + '/index.html'
     };
 
 // Compiles .ts files into .js
 gulp.task('scripts', function(){
-   var tsResult = gulp.src(data.ts)
+   var tsResult = gulp.src(data.ts, {base: "./src"})
        .pipe(ts({
            module: 'amd',
            target: 'es5',
@@ -78,7 +82,7 @@ gulp.task('scripts', function(){
 
     return merge([
         tsResult.dts.pipe(gulp.dest(subdir.dts)),
-        tsResult.js.pipe(gulp.dest(subdir.js))
+        tsResult.js.pipe(gulp.dest(dir.build))
     ])
 });
 
@@ -89,10 +93,9 @@ gulp.task('shell',shell.task([
 
 // Watching all .ts and .html files
 gulp.task('watch', function(){
-    gulp.watch('src/*', ['scripts']);
+    gulp.watch(data.ts, ['scripts']);
     gulp.watch(data.html, ['minify-htmlviews']);
     gulp.watch(data.indexHtml, ['minify-index-html']);
-    // gulp.watch('src/*', ['scripts']);
 });
 
 // Webserver with livereload

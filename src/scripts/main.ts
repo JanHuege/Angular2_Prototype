@@ -1,13 +1,13 @@
-/// <reference path="./angular2/angular2.d.ts"/>
+/// <reference path="./../angular2/angular2.d.ts"/>
 /* tslint:disable */
 import {Component, bootstrap, View, For, If} from "angular2/angular2";
-import {ArticleResource} from './articleResource';
-import {ArticleController} from './articleController';
-import {ShoppingcartController} from './shoppingcartController';
-import {CustomerController} from './customerController';
-import {EmployeeController} from './employeeController';
+import {ArticleResource} from './articleService/articleResource';
+import {ArticleController} from './articleService/articleController';
+import {ShoppingcartController} from './shoppingcartService/shoppingcartController';
+import {CustomerController} from './customerService/customerController';
+import {EmployeeController} from './employeeService/employeeController';
 // not used
-import {Article} from 'article';
+import {Article} from './articleService/article';
 
 
 @Component({
