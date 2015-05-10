@@ -39,6 +39,13 @@ export class CustomerResource {
     }
 
     getCustomerById(id: number): Customer {
+        if (id === 101)
+            return {
+                id: id,
+                name: "Mustermann",
+                firstname: "Maxi",
+                age: 35
+            };
         return {
             id: id,
             name: "Mustermann",

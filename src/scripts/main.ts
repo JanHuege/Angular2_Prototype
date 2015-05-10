@@ -6,6 +6,8 @@ import {ArticleController} from './articleService/articleController';
 import {ShoppingcartController} from './shoppingcartService/shoppingcartController';
 import {CustomerController} from './customerService/customerController';
 import {EmployeeController} from './employeeService/employeeController';
+import {Customer} from './customerService/customer';
+import {CustomerResource} from './customerService/customerResource';
 // not used
 import {Article} from './articleService/article';
 
@@ -20,12 +22,15 @@ import {Article} from './articleService/article';
 /* tslint:enable */
 class MyCmp {
     article: Article;
+    customer: Customer;
     // not used
     articles: Array<Article>;
+
 
     constructor() {
         console.log("Initiated Mock_SPA");
         this.articles = [];
+        this.customer = new CustomerResource().getCustomerById(101);
    }
 
     // not used

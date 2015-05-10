@@ -4,7 +4,7 @@
 
 export class Customer {
     id: number;
-    name: string;
-    firstname: string;
+    name: String;
+    firstname: String;
     age: number
 }

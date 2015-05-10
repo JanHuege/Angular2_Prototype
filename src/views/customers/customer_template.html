@@ -1,10 +1,17 @@
 <h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>
 <p>
-<h3>Vorname: {{ customer.firstname }}</h3><br>
-<h3>Nachname: {{ customer.name }}</h3><br>
-<h3>Alter: {{ customer.age }}</h3><br>
-</p>
-<p>
+<div *if="!isEditing">
+    <h3>Vorname: {{ customer.firstname }}</h3><br>
+    <h3>Nachname: {{ customer.name }}</h3><br>
+    <h3>Alter: {{ customer.age }}</h3><br>
     <input #customerid/>
-    <button (click)="getCustomer(customerid.value)">Finde Kunden</button>
+    <button (click)="getCustomer(customerid.value)">Finde Kunden</button><br><br>
+    <button (click)="editStart()">Daten &aumlndern</button>
+</div>
+<div *if="isEditing">
+    <label>Vorname &aumlndern</label><input #vorname placeholder="{{ customer.firstname }}"><br>
+    <label>Nachname &aumlndern</label><input #name placeholder="{{ customer.name }}"><br>
+    <label>Alter &aumlndern</label><input #alter placeholder="{{ customer.age }}"><br>
+    <button (click)="saveChanges(vorname.value,name.value,alter.value)">Daten speichern</button>
+</div>
 </p>

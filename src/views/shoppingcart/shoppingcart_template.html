@@ -27,4 +27,5 @@
 <p><button type="submit" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)=""></button><br><br></p>
 -->
 <p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()" *if="cart.length"></button><br><br></p>
+<p><button type="button" class="btn btn-success" (click)="emptyCart()" *if="cart.length"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Bestellen</button><br><br></p>
 </div>
