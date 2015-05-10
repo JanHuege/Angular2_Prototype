@@ -28,8 +28,13 @@ export class CustomerController {
         this.isEditing = false;
     }
 
+    //TODO wenn niemand eingeloggt ist muss ein leerer Kunde zurückgegeben werden (ansonsten Fehler in HTML...)
     getCustomer(): Customer {
-        return CustomerService.getCustomer();
+        var customer: Customer = CustomerService.getCustomer();
+        if (customer == null) {
+            return new Customer();
+        }
+        return customer;
     }
 
     //TODO allgemeine Kundenverwaltung funktioniert im Moment nicht; wohin?
