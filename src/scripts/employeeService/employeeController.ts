@@ -1,4 +1,4 @@
-/// <reference path="./angular2/angular2.d.ts"/>
+/// <reference path="./../../angular2/angular2.d.ts"/>
 /* tslint:disable */
 import {Component,View,bootstrap,For,If} from 'angular2/angular2';
 import {EmployeeResource} from './employeeResource';
