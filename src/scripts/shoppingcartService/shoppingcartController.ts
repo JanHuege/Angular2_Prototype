@@ -12,7 +12,7 @@ import {Article} from '../articleService/article';
 })
 @View({
     templateUrl: "html_templates/shoppingcart_template.html",
-    directives: [For]
+    directives: [For, If]
 })
 /* tslint:enable */
 export class ShoppingcartController {
