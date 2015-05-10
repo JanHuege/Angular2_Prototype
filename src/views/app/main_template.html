@@ -19,7 +19,7 @@
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = show(); artikel.value = hide()">Employee show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = hide(); artikel.value = show()">Article Show</a></li>
                         -->
-                        <!-- Workaround für Warenkorbimport -->
+                        <!-- Workaround für imports -->
                         <li><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'">Index show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = ''">Article Show</a></li>
                         <li><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'">Warenkorb show</a></li>
@@ -30,15 +30,27 @@
                 </li>
             </ul>
 
-            <div id="navbar" class="navbar-collapse collapse">
+            <div id="navbar-login" class="navbar-collapse collapse" *if="!login">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
-                        <input type="text" placeholder="Email eingeben" class="form-control">
+                        <input type="text" placeholder="Email eingeben" class="form-control" #email>
                     </div>
                     <div class="form-group">
                         <input type="password" placeholder="Passwort eingeben" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-success">Anmelden</button>
+                    <button type="button" (click)="setlogin(email.value)" class="btn btn-success">Anmelden</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+
+            <div id="navbar-logout" class="navbar-collapse collapse" *if="login">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <span>{{ customer.name }}</span>
+                    </div>
+                    <div class="form-group">
+                        <span>{{ customer.firstname }}</span>
+                    </div>
+                    <button type="button" (click)="setlogin()" class="btn btn-danger">Abmelden</button>
                 </form>
             </div><!--/.navbar-collapse -->
         </div>
@@ -142,7 +154,7 @@
     </div>
 
     <div [style.display]="blend(artikel.value)"  style="text-align: center">
-        <articlecontroller #art></articlecontroller>
+        <articlecontroller></articlecontroller>
     </div>
 
 </div>

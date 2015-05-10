@@ -59,7 +59,7 @@ export let ShoppingcartService = {
     toString(): string {
         var s: string = "";
         orderItems.forEach(function(item: OrderItem): void {
-            s += item.article.id + " " + item.article.name + " " + item.quantity + " " + item.getTotalPrice() + "\u20AC \n";
+            s += item.article.name + " " + item.quantity + "x " + item.getTotalPrice() + "\u20AC \n";
         });
         return s;
     }

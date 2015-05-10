@@ -514,7 +514,7 @@ declare module "angular2/angular2" {
    *
    * * When an item is added, a new instance of the template is added to the DOM.
    * * When an item is removed, its template instance is removed from the DOM.
-   * * When cart are reordered, their respective templates are reordered in the DOM.
+   * * When items are reordered, their respective templates are reordered in the DOM.
    *
    * # Example
    *
@@ -528,9 +528,9 @@ declare module "angular2/angular2" {
    *
    * # Syntax
    *
-   * - `<li *for="#item of cart; #i = index">...</li>`
-   * - `<li template="for #item of cart; #i=index">...</li>`
-   * - `<template [for]="#item" [of]="cart" #i="index"><li>...</li></template>`
+   * - `<li *for="#item of items; #i = index">...</li>`
+   * - `<li template="for #item of items; #i=index">...</li>`
+   * - `<template [for]="#item" [of]="items" #i="index"><li>...</li></template>`
    *
    */
   function For(): void;

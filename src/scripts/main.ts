@@ -23,6 +23,7 @@ import {Article} from './articleService/article';
 class MyCmp {
     article: Article;
     customer: Customer;
+    login: boolean;
     // not used
     articles: Array<Article>;
 
@@ -30,8 +31,18 @@ class MyCmp {
     constructor() {
         console.log("Initiated Mock_SPA");
         this.articles = [];
-        this.customer = new CustomerResource().getCustomerById(101);
-   }
+        this.customer = new Customer;
+        this.login = false;
+    }
+
+    setlogin(id?: number): void{
+        if (!this.login && id) {
+            this.customer = new CustomerResource().findCustomerById(id);
+            this.login = true;
+        }
+        else
+            this.login = false;
+    }
 
     // not used
     setArticles(list: Array<Article>): void {
