@@ -28,5 +28,5 @@
 <!--
 <p><button type="submit" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)=""></button><br><br></p>
 -->
-<p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()"></button><br><br></p>
+<p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()" *if="cart.length"></button><br><br></p>
 </div>
