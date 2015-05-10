@@ -37,7 +37,7 @@ export let ShoppingcartService = {
     },
 
     deleteFromCart(delid: number): void {
-        orderItems.forEach(function(item: OrderItem, index: number) {
+        orderItems.forEach((item: OrderItem, index: number) => {
             if (item.article.id == delid) {
                 if (item.quantity > 1) {
                     item.quantity -= 1;
@@ -57,7 +57,7 @@ export let ShoppingcartService = {
 
     toString(): string {
         var s: string = "";
-        orderItems.forEach(function(item: OrderItem): void {
+        orderItems.forEach((item: OrderItem): void => {
             s += item.article.name + " " + item.quantity + "x " + item.getTotalPrice() + "\u20AC \n";
         });
         return s;

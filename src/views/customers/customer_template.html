@@ -1,4 +1,4 @@
-<h1>Kundenverwaltung von {{ customer.firstname }} {{ customer.name }}</h1>
+<h1>Kundenverwaltung von {{ getCustomer().firstname }} {{ getCustomer().name }}</h1>
 <p>
 <div *if="!isEditing">
     <h3>Vorname: {{ getCustomer().firstname }}</h3><br>

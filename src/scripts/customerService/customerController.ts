@@ -18,13 +18,13 @@ import {CustomerService} from './customerService';
 })
 /* tslint:enable */
 export class CustomerController {
-    customer: Customer;
-    customerMock: CustomerResource;
+    //customer: Customer;
+    //customerMock: CustomerResource;
     isEditing: boolean;
 
     constructor() {
-        this.customerMock = new CustomerResource();
-        this.customer = this.customerMock.getCustomerById(1);
+        //this.customerMock = new CustomerResource();
+        //this.customer = this.customerMock.getCustomerById(1);
         this.isEditing = false;
     }
 
@@ -38,9 +38,11 @@ export class CustomerController {
     }
 
     //TODO allgemeine Kundenverwaltung funktioniert im Moment nicht; wohin?
-/*    getCustomer(id: number): void {
+    /*
+    getCustomer(id: number): void {
         this.customer = this.customerMock.findCustomerById(id);
-    }*/
+    }
+    */
 
     editStart(): void {
         this.isEditing = true;
