@@ -41,7 +41,6 @@ export let ShoppingcartService = {
             if (item.article.id == delid) {
                 if (item.quantity > 1) {
                     item.quantity -= 1;
-                    console.log("delete item " + delid);
                 }
                 else {
                     orderItems.splice(index, 1);

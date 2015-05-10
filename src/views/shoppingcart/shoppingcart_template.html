@@ -13,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *for = "#item of cart">
+    <tr *for = "#item of getItems()">
         <td>0</td>
         <td>{{ item.article.name }}</td>
         <td>{{ item.article.description }}</td>
@@ -28,6 +28,6 @@
 <!--
 <p><button type="submit" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)=""></button><br><br></p>
 -->
-<p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()" *if="cart.length"></button><br><br></p>
-<p><button type="button" class="btn btn-success" (click)="emptyCart()" *if="cart.length"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Bestellen</button><br><br></p>
+<p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()" *if="getItems().length"></button><br><br></p>
+<p><button type="button" class="btn btn-success" (click)="emptyCart()" *if="getItems().length"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Bestellen</button><br><br></p>
 </div>

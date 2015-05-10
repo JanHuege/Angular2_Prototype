@@ -30,7 +30,7 @@
                 </li>
             </ul>
 
-            <div id="navbar-login" class="navbar-collapse collapse" *if="!login">
+            <div id="navbar-login" class="navbar-collapse collapse" *if="!loggedIn()">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
                         <input type="text" placeholder="Email eingeben" class="form-control" #email>
@@ -42,13 +42,13 @@
                 </form>
             </div><!--/.navbar-collapse -->
 
-            <div id="navbar-logout" class="navbar-collapse collapse" *if="login">
+            <div id="navbar-logout" class="navbar-collapse collapse" *if="loggedIn()">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
-                        <span>{{ customer.name }}</span>
+                        <span>{{ getCustomer().name }}</span>
                     </div>
                     <div class="form-group">
-                        <span>{{ customer.firstname }}</span>
+                        <span>{{ getCustomer().firstname }}</span>
                     </div>
                     <button type="button" (click)="setlogin()" class="btn btn-danger">Abmelden</button>
                 </form>
@@ -146,7 +146,7 @@
     </div>
 
     <div [style.display]="blend(kunde.value)" style="text-align: center">
-        <customercontroller [customer]="customer"></customercontroller>
+        <customercontroller></customercontroller>
     </div>
 
     <div [style.display]="blend(warenkorb.value)" style="text-align: center">

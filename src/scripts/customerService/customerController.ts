@@ -2,13 +2,15 @@
 /* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {CustomerResource} from './customerResource';
-import {Customer} from 'customer';
+import {Customer} from './customer';
+import {CustomerService} from './customerService';
 
 @Component({
     selector: 'customercontroller',
     properties: {
         customer: 'customer'
-    }
+    },
+    componentServices: [CustomerService]
 })
 @View({
     templateUrl: "html_templates/customer_template.html",
@@ -26,18 +28,21 @@ export class CustomerController {
         this.isEditing = false;
     }
 
-    getCustomer(id: number): void {
-        this.customer = this.customerMock.findCustomerById(id);
+    getCustomer(): Customer {
+        return CustomerService.getCustomer();
     }
+
+    //TODO allgemeine Kundenverwaltung funktioniert im Moment nicht; wohin?
+/*    getCustomer(id: number): void {
+        this.customer = this.customerMock.findCustomerById(id);
+    }*/
 
     editStart(): void {
         this.isEditing = true;
     }
 
-    saveChanges(vorname: String, name: String, age: number): void {
-        this.customer.firstname = vorname;
-        this.customer.name = name;
-        this.customer.age = age;
+    saveChanges(vorname: string, name: string, age: number): void {
+        CustomerService.saveChanges(vorname, name, age);
         this.isEditing = false;
     }
 }

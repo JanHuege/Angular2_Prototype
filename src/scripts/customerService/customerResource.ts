@@ -57,6 +57,16 @@ export class CustomerResource {
     getCustomers(): Array<Customer> {
         return this.customers;
     }
+
+    updateCustomer(id: number, name: string, firstname: string, age: number): Customer {
+        var customer: Customer = this.findCustomerById(id);
+        if(customer != null) {
+            customer.name = name;
+            customer.firstname = firstname;
+            customer.age = age;
+        }
+        return customer;
+    }
 }
 
 

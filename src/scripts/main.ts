@@ -8,12 +8,14 @@ import {CustomerController} from './customerService/customerController';
 import {EmployeeController} from './employeeService/employeeController';
 import {Customer} from './customerService/customer';
 import {CustomerResource} from './customerService/customerResource';
+import {CustomerService} from './customerService/customerService';
 // not used
 import {Article} from './articleService/article';
 
 
 @Component({
-    selector: 'cmp'
+    selector: 'cmp',
+    componentServices: [CustomerService]
 })
 @View({
     templateUrl: "html_templates/main_template.html",
@@ -22,8 +24,6 @@ import {Article} from './articleService/article';
 /* tslint:enable */
 class MyCmp {
     article: Article;
-    customer: Customer;
-    login: boolean;
     // not used
     articles: Array<Article>;
 
@@ -31,17 +31,18 @@ class MyCmp {
     constructor() {
         console.log("Initiated Mock_SPA");
         this.articles = [];
-        this.customer = new Customer;
-        this.login = false;
     }
 
-    setlogin(id?: number): void{
-        if (!this.login && id) {
-            this.customer = new CustomerResource().findCustomerById(id);
-            this.login = true;
-        }
-        else
-            this.login = false;
+    setlogin(id: number): void{
+        CustomerService.login(id);
+    }
+
+    loggedIn(): boolean {
+        return CustomerService.loggedIn();
+    }
+
+    getCustomer(): Customer {
+        return CustomerService.getCustomer();
     }
 
     // not used

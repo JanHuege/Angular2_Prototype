@@ -15,10 +15,8 @@ import {ShoppingcartService} from './shoppingcartService'
 /* tslint:enable */
 export class ShoppingcartController {
 
-    cart: List<OrderItem>;
-
-    constructor() {
-        this.cart = ShoppingcartService.get();
+    getItems(): List<OrderItem> {
+        return ShoppingcartService.get();
     }
 
     calculateTotal(): number {
@@ -31,12 +29,10 @@ export class ShoppingcartController {
 
     deleteFromCart(delid: number): void {
         ShoppingcartService.deleteFromCart(delid);
-        this.cart = ShoppingcartService.get();
     }
 
     emptyCart(): void {
         ShoppingcartService.emptyCart();
-        this.cart = ShoppingcartService.get();
     }
 
     doneTyping($event): void {
