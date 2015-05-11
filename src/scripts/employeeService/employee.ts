@@ -6,6 +6,7 @@ export class Employee {
     name: string;
     firstname: string;
     age: number;
-    gehalt: number;
+    salary: number;
     role: string;
+    tasks: string;
 }

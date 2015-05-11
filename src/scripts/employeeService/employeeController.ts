@@ -18,11 +18,15 @@ export class EmployeeController {
     employeeMock: EmployeeResource = new EmployeeResource();
 
     constructor() {
-        this.employee = this.employeeMock.getPersonalById(1337);
+        this.employee = this.employeeMock.getEmployeeById(1337);
     }
 
     getPersonal(id: number): void {
-        this.employee = this.employeeMock.findPersonalById(id);
+        this.employee = this.employeeMock.findEmployeeById(id);
+    }
+
+    getTasks(): void {
+        alert("Die Aufgabe vom 10.05.2015  " +  this.employee.tasks  + " muss bis zum 20.05.2015 erledigt sein!");
     }
 }
 

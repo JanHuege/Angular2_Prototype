@@ -1,5 +1,107 @@
 <div class="jumbotron" >
     <h2> Personalverwaltung von {{employee.firstname}} {{employee.name}} </h2> </br>
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">4</div>
+                            <div>Neue Kommentare!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="#">
+
+                        Mehr Infos
+                        <i class="fa fa-arrow-circle-right"></i>
+
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tasks fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">Neue Aufgaben</div>
+                            <div>{{employee.tasks}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+
+
+                    <a style="cursor: pointer" (click)="getTasks()">
+
+                        Mehr Details
+                        <i class="fa fa-arrow-circle-right"></i>
+
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">3</div>
+                            <div>Neue Bestellungen</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="#">
+
+                        Bestellinformationen
+                        <i class="fa fa-arrow-circle-right"></i>
+
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-calendar fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">13</div>
+                            <div>Ausstehende Termine</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="#">
+
+                        Mehr Infos
+                        <i class="fa fa-arrow-circle-right"></i>
+
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="table table-striped"  align="center" valign="middle">
         <thead>
         <tr>
@@ -19,11 +121,11 @@
             <td>{{ employee.name }}  </td>
             <td> @MaxiCosi </td>
             <td>{{ employee.role }}  </td>
-            <td>{{ employee.gehalt }}  </td>
+            <td>{{ employee.salary }}  </td>
         </tr>
         </tbody>
     </table>
 
- <input #personalid/>
+    <input #personalid/>
     <a class="btn btn-primary btn-lg" href="#" role="button" (click)="getPersonal(personalid.value)">Finde anderes Personal &raquo;</a>
 </div>
