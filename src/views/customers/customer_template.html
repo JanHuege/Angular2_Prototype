@@ -5,7 +5,7 @@
     <h3>Nachname: {{ getCustomer().name }}</h3><br>
     <h3>Alter: {{ getCustomer().age }}</h3><br>
     <input #customerid/>
-    <button (click)="getCustomer(customerid.value)">Finde Kunden</button><br><br>
+    <!-- <button (click)="getCustomer(customerid.value)">Finde Kunden</button> --><br><br>
     <button (click)="editStart()">Daten &aumlndern</button>
 </div>
 <div *if="isEditing">

@@ -6,11 +6,13 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     minifyHTML = require('gulp-minify-html'),
     imagemin = require('gulp-imagemin'),
+    uglify = require('gulp-uglify'),
     gutil = require('gulp-util'),
     newer = require('gulp-newer'),
     tslint = require('gulp-tslint'),
     cache = require('gulp-cached'),
     format = require('gulp-clang-format'),
+    rename = require('gulp-rename'),
 
     dir = {
         src: 'src',
@@ -82,7 +84,9 @@ gulp.task('scripts', function(){
 
     return merge([
         tsResult.dts.pipe(gulp.dest(subdir.dts)),
-        tsResult.js.pipe(gulp.dest(dir.build))
+        tsResult.js
+            .pipe(uglify())
+            .pipe(gulp.dest(dir.build))
     ])
 });
 
@@ -107,16 +111,16 @@ gulp.task('connect', function() {
 });
 
 // Use to setup all needed data
-// Options --prod for imageminification
-gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern','copyMINCSS','copyAngular2']);
+// Options --img for imageminification
+gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern','copyMINCSS','copyAngular2','scripts']);
 
     gulp.task('minify', ['minify-htmlviews','minify-index-html','imagemin']);
 
         gulp.task('imagemin', function(){
             return gulp.src(data.img)
                 .pipe(newer(subdir.img))
-                // --prod
-                .pipe(gutil.env.prod ? imagemin() : gutil.noop())
+                // --img
+                .pipe(gutil.env.img ? imagemin() : gutil.noop())
                 .pipe(gulp.dest(subdir.img));
         });
 
