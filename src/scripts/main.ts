@@ -1,4 +1,15 @@
 /// <reference path="./../angular2/angular2.d.ts"/>
+/// <reference path="../definitions/shoppingcartService/shoppingcartController.d.ts"/>
+/// <reference path="../definitions/customerService/customerController.d.ts"/>
+/// <reference path="../definitions/employeeService/employeeController.d.ts"/>
+/// <reference path="../definitions/customerService/customer.d.ts"/>
+/// <reference path="../definitions/customerService/customerResource.d.ts"/>
+/// <reference path="../definitions/customerService/customerService.d.ts"/>
+/// <reference path="../definitions/articleService/articleResource.d.ts"/>
+/// <reference path="../definitions/articleService/articleController.d.ts"/>
+
+/// <reference path="../definitions/articleService/article.d.ts"/>
+
 /* tslint:disable */
 import {Component, bootstrap, View, For, If} from "angular2/angular2";
 import {ArticleResource} from './articleService/articleResource';
@@ -33,48 +44,48 @@ class MyCmp {
         this.articles = [];
     }
 
-    setlogin(id: number): void{
+    public setlogin(id: number): void {
         CustomerService.login(id);
     }
 
-    loggedIn(): boolean {
+    public loggedIn(): boolean {
         return CustomerService.loggedIn();
     }
 
-    getCustomer(): Customer {
+    public getCustomer(): Customer {
         return CustomerService.getCustomer();
     }
 
     // not used
-    setArticles(list: Array<Article>): void {
+    public setArticles(list: Array<Article>): void {
         this.articles = list;
     }
 
     // not used
-    getArticles(): Array<Article> {
+    public getArticles(): Array<Article> {
         return this.articles;
     }
 
-    blend(value: string): String {
+    public blend(value: string): String {
         if (value === "") {
             return "";
         }
         return "none";
     }
 
-    showIndex(): boolean {
+    public showIndex(): boolean {
         return false;
     }
 
-    hideIndex(): boolean {
+    public hideIndex(): boolean {
         return true;
     }
 
-    show(): boolean {
+    public show(): boolean {
         return true;
     }
 
-    hide(): boolean {
+    public hide(): boolean {
         return false;
     }
 

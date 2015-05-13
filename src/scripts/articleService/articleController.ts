@@ -1,4 +1,8 @@
 /// <reference path="./../../angular2/angular2.d.ts"/>
+/// <reference path="../../definitions/articleService/article.d.ts"/>
+/// <reference path="../../definitions/articleService/articleResource.d.ts"/>
+/// <reference path="../../definitions/shoppingcartService/shoppingcartService.d.ts"/>
+
 /* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {ArticleResource} from './articleResource';
@@ -20,7 +24,7 @@ export class ArticleController {
         this.articles = this.articleMock.getArticles();
     }
 
-    addArticle(article: Article): void {
+    public addArticle(article: Article): void {
         ShoppingcartService.addToCart(article.id);
 
         console.log("Added to Cart");

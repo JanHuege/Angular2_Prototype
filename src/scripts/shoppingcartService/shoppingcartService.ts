@@ -1,12 +1,17 @@
+/// <reference path="../../definitions/shoppingcartService/orderItem.d.ts"/>
+/// <reference path="../../definitions/articleService/article.d.ts"/>
+/// <reference path="../../definitions/articleService/articleResource.d.ts"/>
+
+/* tslint:disable */
 import {OrderItem} from './orderItem';
 import {Article} from '../articleService/article';
 import {ArticleResource} from '../articleService/articleResource';
-
+/* tslint:enable */
 var orderItems: List<OrderItem> = [];
 
-export let ShoppingcartService = {
+export let ShoppingcartService: any = {
 
-    get() {
+    get(): List<OrderItem> {
         return orderItems;
     },
 
@@ -22,27 +27,25 @@ export let ShoppingcartService = {
         var articleMock: ArticleResource = new ArticleResource();
         var article: Article = articleMock.findArticleById(id);
 
-        if(!article) {
+        if (!article) {
             return;
         }
 
-        var items = orderItems.filter(item => item.article.id == id);
+        var items: List<OrderItem> = orderItems.filter((item: OrderItem) => item.article.id === id);
 
-        if(items.length > 0) {
+        if (items.length > 0) {
             items[0].quantity += 1;
-        }
-        else {
+        } else {
             orderItems.push(new OrderItem(article));
         }
     },
 
     deleteFromCart(delid: number): void {
         orderItems.forEach((item: OrderItem, index: number) => {
-            if (item.article.id == delid) {
+            if (item.article.id === delid) {
                 if (item.quantity > 1) {
                     item.quantity -= 1;
-                }
-                else {
+                } else {
                     orderItems.splice(index, 1);
                 }
             }
