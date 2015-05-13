@@ -131,6 +131,7 @@ gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern
             };
 
             return gulp.src(data.html)
+                .pipe(newer(subdir.html))
                 .pipe(minifyHTML(options))
                 .pipe(gulp.dest(subdir.html));
         });
@@ -142,6 +143,7 @@ gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern
             };
 
         return gulp.src(data.indexHtml)
+            .pipe(newer(dir.build))
             .pipe(minifyHTML(options))
             .pipe(gulp.dest(dir.build));
         });

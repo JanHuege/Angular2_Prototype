@@ -2,11 +2,12 @@
 /* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {OrderItem} from './orderItem';
-import {ShoppingcartService} from './shoppingcartService'
+import {ShoppingcartService} from './shoppingcartService';
+import {CustomerService} from '../customerService/customerService'
 
 @Component({
     selector: 'cart',
-    componentServices: [ShoppingcartService]
+    componentServices: [ShoppingcartService, CustomerService]
 })
 @View({
     templateUrl: "html_templates/shoppingcart_template.html",
@@ -32,7 +33,12 @@ export class ShoppingcartController {
     }
 
     emptyCart(): void {
-        ShoppingcartService.emptyCart();
+        if (CustomerService.loggedIn()) {
+            ShoppingcartService.emptyCart();
+        }
+        else {
+            alert("You must be logged in!");
+        }
     }
 
     doneTyping($event): void {
