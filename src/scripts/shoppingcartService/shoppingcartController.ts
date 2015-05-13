@@ -35,7 +35,7 @@ export class ShoppingcartController {
         ShoppingcartService.deleteFromCart(delid);
     }
 
-    emptyCart(): void {
+    public emptyCart(): void {
         if (CustomerService.loggedIn()) {
             ShoppingcartService.emptyCart();
         }
