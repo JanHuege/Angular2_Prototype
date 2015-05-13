@@ -53,3 +53,6 @@ build
 
 # Visual Studio Code Settings
 .settings
+
+# .d.ts
+src/definitions
