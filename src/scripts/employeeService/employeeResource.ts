@@ -1,6 +1,5 @@
-/**
- * Created by Nazif on 28.04.2015.
- */
+/// <reference path="../../definitions/employeeService/employee.d.ts"/>
+
 /* tslint:disable */
 import {Employee} from 'employee';
 /* tslint:enable */
@@ -45,17 +44,17 @@ export class EmployeeResource {
         }
     ];
 
-    findEmployeeById(id: number): Employee {
+    public findEmployeeById(id: number): Employee {
         var employee: Employee = null;
         this.Employees.forEach((pers: Employee) => {
-            if (pers.id == id) {
+            if (pers.id === (+id)) {
                 employee = pers;
             }
         });
         return employee;
     }
 
-    getEmployeeById(id: number): Employee {
+    public getEmployeeById(id: number): Employee {
         return {
             id: id,
             name: "Mustermann",
@@ -67,7 +66,7 @@ export class EmployeeResource {
         };
     }
 
-    getEmployees(): Array<Employee> {
+    public getEmployees(): Array<Employee> {
         return this.Employees;
     }
 }

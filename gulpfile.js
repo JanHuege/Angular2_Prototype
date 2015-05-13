@@ -68,9 +68,11 @@ var gulp = require('gulp'),
         css: dir.src + '/style/css/*.css',
         mincss: dir.src + '/style/css/*.min.css',
         extern: dir.src + '/extern/*',
-        indexHtml: dir.src + '/index.html'
+        indexHtml: dir.src + '/index.html',
+        definitions: dir.src + '/definitions'
     };
 
+// TODO split .d.ts Results with other base path
 // Compiles .ts files into .js
 gulp.task('scripts', function(){
    var tsResult = gulp.src(data.ts, {base: "./src"})
@@ -87,7 +89,23 @@ gulp.task('scripts', function(){
         tsResult.js
             .pipe(uglify())
             .pipe(gulp.dest(dir.build))
-    ])
+    ]);
+});
+
+// Creates .d.ts files for referencing modules in typescript
+gulp.task('definitions', function(){
+   var tsResult = gulp.src(data.ts, {base: "./src/scripts"})
+       .pipe(ts({
+           module: 'amd',
+           target: 'es5',
+           declarationFiles: true,
+           noExternalResolve: false,
+           typescript: require('typescript')
+       }));
+
+    return merge([
+        tsResult.dts.pipe(gulp.dest(data.definitions))
+    ]);
 });
 
 // Call once to compile all .ts files before running gulp default for the first time

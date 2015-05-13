@@ -1,6 +1,5 @@
-/**
- * Created by Christina on 26.04.2015.
- */
+/// <reference path="../../definitions/articleService/article.d.ts"/>
+
 /* tslint:disable */
 import {Article} from './article';
 /* tslint:enable */
@@ -16,7 +15,7 @@ export class ArticleResource {
 
     ];
 
-    findArticleById(id: number): Article {
+    public findArticleById(id: number): Article {
         var article: Article = null;
         this.articles.forEach((art: Article) => {
             if (art.id === id) {
@@ -26,11 +25,11 @@ export class ArticleResource {
         return article;
     }
 
-    getArticleById(id: number): Article {
+    public getArticleById(id: number): Article {
         return new Article(id, "Superunbequemer Stuhl.", 999.89, "Ein superunbequemer Stuhl.");
     }
 
-    getArticles(): Array<Article> {
+    public getArticles(): Array<Article> {
         return this.articles;
     }
 }

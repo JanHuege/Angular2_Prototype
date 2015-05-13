@@ -1,4 +1,8 @@
 /// <reference path="./../../angular2/angular2.d.ts"/>
+/// <reference path="../../definitions/customerService/customer.d.ts"/>
+/// <reference path="../../definitions/customerService/customerService.d.ts"/>
+/// <reference path="../../definitions/customerService/customerResource.d.ts"/>
+
 /* tslint:disable */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 import {CustomerResource} from './customerResource';
@@ -18,18 +22,18 @@ import {CustomerService} from './customerService';
 })
 /* tslint:enable */
 export class CustomerController {
-    //customer: Customer;
-    //customerMock: CustomerResource;
+    // customer: Customer;
+    // customerMock: CustomerResource;
     isEditing: boolean;
 
     constructor() {
-        //this.customerMock = new CustomerResource();
-        //this.customer = this.customerMock.getCustomerById(1);
+        // this.customerMock = new CustomerResource();
+        // this.customer = this.customerMock.getCustomerById(1);
         this.isEditing = false;
     }
 
-    //TODO wenn niemand eingeloggt ist muss ein leerer Kunde zurückgegeben werden (ansonsten Fehler in HTML...)
-    getCustomer(): Customer {
+    // TODO wenn niemand eingeloggt ist muss ein leerer Kunde zurückgegeben werden (ansonsten Fehler in HTML...)
+    public getCustomer(): Customer {
         var customer: Customer = CustomerService.getCustomer();
         if (customer == null) {
             return new Customer();
@@ -37,18 +41,18 @@ export class CustomerController {
         return customer;
     }
 
-    //TODO allgemeine Kundenverwaltung funktioniert im Moment nicht; wohin?
+    // TODO allgemeine Kundenverwaltung funktioniert im Moment nicht; wohin?
     /*
-    getCustomer(id: number): void {
+     public getCustomer(id: number): void {
         this.customer = this.customerMock.findCustomerById(id);
     }
     */
 
-    editStart(): void {
+    public editStart(): void {
         this.isEditing = true;
     }
 
-    saveChanges(vorname: string, name: string, age: number): void {
+    public saveChanges(vorname: string, name: string, age: number): void {
         CustomerService.saveChanges(vorname, name, age);
         this.isEditing = false;
     }
