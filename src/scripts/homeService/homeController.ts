@@ -11,5 +11,3 @@ import {Component,View,bootstrap,For,If} from 'angular2/angular2';
 })
 /* tslint:enable */
 export class HomeController {}
-
-bootstrap(HomeController);

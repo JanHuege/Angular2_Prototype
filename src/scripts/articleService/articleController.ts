@@ -35,5 +35,3 @@ export class ArticleController {
         console.log("Added to Cart");
     }
 }
-
-bootstrap(ArticleController);

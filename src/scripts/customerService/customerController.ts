@@ -56,5 +56,3 @@ export class CustomerController {
         this.isEditing = false;
     }
 }
-
-bootstrap(CustomerController);

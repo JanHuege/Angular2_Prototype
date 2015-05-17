@@ -36,5 +36,3 @@ export class EmployeeController {
         alert("Die Aufgabe vom 10.05.2015  " +  this.employee.tasks  + " muss bis zum 20.05.2015 erledigt sein!");
     }
 }
-
-bootstrap(EmployeeController);
