@@ -1,0 +1,166 @@
+<!-- Navleiste Nazif -->
+<nav class="navbar navbar-collapse">
+    <div class="container">
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!--
+                <li class="Startseite"><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'" href="#/Startseite">Startseite</a></li>
+                <li class="Artikel"><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = ''" href="#/Artikel">Artikel</a></li>
+                <li class="Warenkorb"><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'" href="#/Warenkorb">Warenkorb</a></li>
+                <li class="Kunde"><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = ''; personal.value = 'none'; artikel.value = 'none'" href="#/Profil">Profil</a></li>
+                <li><a href="#/Nachrichten">Nachrichten</a></li>
+                -->
+                <!--
+                <li class="Startseite"><a (click)="blendNew(0)" href="#/Startseite">Startseite</a></li>
+                <li class="Artikel"><a (click)="blendNew(1)" href="#/Artikel">Artikel</a></li>
+                <li class="Warenkorb"><a (click)="blendNew(2)" href="#/Warenkorb">Warenkorb</a></li>
+                <li class="Kunde"><a (click)="blendNew(3)" href="#/Profil">Profil</a></li>
+                <li><a href="#/Nachrichten">Nachrichten</a></li>
+                -->
+                <li><a router-link="index">Startseite</a></li>
+                <li><a router-link="article">Artikel</a></li>
+                <li><a router-link="cart">Warenkorb</a></li>
+                <li><a router-link="customer">Profil</a></li>
+                <li class="Einstellungen">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Einstellungen<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <!--
+                        <li><a (click)="index.value = showIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = hide(); artikel.value = hide()">Index show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = show(); kunde.value = hide(); employee.value = hide(); artikel.value = hide()">Warenkorb show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = show(); employee.value = hide(); artikel.value = hide()">Kunde show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = show(); artikel.value = hide()">Employee show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = hide(); kunde.value = hide(); employee.value = hide(); artikel.value = show()">Article Show</a></li>
+                        -->
+                        
+                        <!-- Workaround f�r imports -->
+                        <!--
+                        <li><a (click)="index.value = showIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'" href="#/Startseite">Index show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = ''" href="#/Artikel">Article Show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = ''; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'" href="#/Warenkorb">Warenkorb show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = ''; personal.value = 'none'; artikel.value = 'none'" href="#/Profil">Kunde show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = ''; artikel.value = 'none'" href="#/Personal">Personal show</a></li>
+                        <li><a (click)="index.value = hideIndex(); warenkorb.value = 'none'; kunde.value = 'none'; personal.value = 'none'; artikel.value = 'none'">Hide all</a></li>
+                        -->
+                        
+                        <!-- Workaround imports .22 and .23 alpha ng2 -->
+                        <!--
+                        <li><a (click)="blendNew(0)" href="#/Startseite">Index show</a></li>
+                        <li><a (click)="blendNew(1)" href="#/Artikel">Article Show</a></li>
+                        <li><a (click)="blendNew(2)" href="#/Warenkorb">Warenkorb show</a></li>
+                        <li><a (click)="blendNew(3)" href="#/Profil">Kunde show</a></li>
+                        <li><a (click)="blendNew(4)" href="#/Personal">Personal show</a></li>
+                        -->
+
+                        <!-- Router Test -->
+                        <li><a router-link="index">Index show</a></li>
+                        <li><a router-link="article">Article Show</a></li>
+                        <li><a router-link="cart">Warenkorb show</a></li>
+                        <li><a router-link="customer">Kunde show</a></li>
+                        <li><a router-link="employee">Personal show</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div id="navbar-login" class="navbar-collapse collapse" *if="!loggedIn()">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email eingeben" class="form-control" #email>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Passwort eingeben" class="form-control">
+                    </div>
+                    <button type="button" (click)="setlogin(email.value)" class="btn btn-success">Anmelden</button>
+                </form>
+            </div>
+
+            <div id="navbar-logout" class="navbar-collapse collapse" *if="loggedIn()">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <span>{{ getCustomer().name }}</span>
+                    </div>
+                    <div class="form-group">
+                        <span>{{ getCustomer().firstname }}</span>
+                    </div>
+                    <button type="button" (click)="setlogin()" class="btn btn-danger">Abmelden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div id="Seitenmitte">
+<!--
+    <span #index></span>
+    <span #warenkorb></span>
+    <span #kunde></span>
+    <span #personal></span>
+    <span #artikel></span>
+-->
+    <!-- <div *If="!index.value"> -->
+    <!-- <div [style.display]="index"> -->
+
+    <!-- </div> -->
+
+    <!-- Warenkorb und Artikel/Katalog div ausblenden mit IF f�hrt zum l�schen des div wenn *IF = true -> Fehler f�r Import/Export -->
+    <!--
+    <div *If="warenkorb.value" style="text-align: center" >
+        <shoppingcartcontroller [cart]="art.list"></shoppingcartcontroller>
+    </div>
+
+    <div *If="artikel.value" style="text-align: center" >
+        <articlecontroller #art></articlecontroller>
+    </div>
+
+    <div *If="kunde.value" style="text-align: center" >
+        <customercontroller></customercontroller>
+    </div>
+
+    <div *If="personal.value" style="text-align: center">
+        <employeecontroller></employeecontroller>
+    </div>
+    -->
+
+    <!-- Workaround f�r Warenkorbimport -->
+    <!--
+    <div [style.display]="blend(personal.value)" style="text-align: center">
+        <employeecontroller></employeecontroller>
+    </div>
+
+    <div [style.display]="blend(kunde.value)" style="text-align: center">
+        <customercontroller></customercontroller>
+    </div>
+
+    <div [style.display]="blend(warenkorb.value)" style="text-align: center">
+        <shoppingcartcontroller></shoppingcartcontroller>
+    </div>
+
+    <div [style.display]="blend(artikel.value)" style="text-align: center">
+        <articlecontroller></articlecontroller>
+    </div>
+    -->
+    
+    <!-- Workaround .22 and .23 alpha ng2 -->
+    <!--
+    <div [style.display]="employee" style="text-align: center">
+        <employeecontroller></employeecontroller>
+    </div>
+
+    <div [style.display]="customer" style="text-align: center">
+        <customercontroller></customercontroller>
+    </div>
+
+    <div [style.display]="cart" style="text-align: center">
+        <shoppingcartcontroller></shoppingcartcontroller>
+    </div>
+
+    <div [style.display]="item" style="text-align: center">
+        <articlecontroller></articlecontroller>
+    </div>
+    -->
+
+    <router-outlet></router-outlet>
+</div>
+
+<footer></footer>

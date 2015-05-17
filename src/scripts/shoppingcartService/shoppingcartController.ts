@@ -9,7 +9,7 @@ import {ShoppingcartService} from './shoppingcartService';
 import {CustomerService} from '../customerService/customerService'
 
 @Component({
-    selector: 'cart',
+    selector: 'shoppingcartcontroller',
     componentServices: [ShoppingcartService, CustomerService]
 })
 @View({
@@ -19,11 +19,16 @@ import {CustomerService} from '../customerService/customerService'
 /* tslint:enable */
 export class ShoppingcartController {
 
+    constructor() {
+        console.log("constructor: ShoppingcartController");
+    }
+
     public getItems(): List<OrderItem> {
         return ShoppingcartService.get();
     }
 
     public calculateTotal(): number {
+        console.log("calculateTotal()");
         return ShoppingcartService.calculateTotal();
     }
 
@@ -32,14 +37,16 @@ export class ShoppingcartController {
     }
 
     public deleteFromCart(delid: number): void {
+        console.log("deleteFromCart()");
         ShoppingcartService.deleteFromCart(delid);
     }
 
     public emptyCart(): void {
         if (CustomerService.loggedIn()) {
+            console.log("emptyCart()");
             ShoppingcartService.emptyCart();
-        }
-        else {
+        } else {
+            console.log("emptyCart() - login required");
             alert("You must be logged in!");
         }
     }

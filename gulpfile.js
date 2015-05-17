@@ -40,7 +40,9 @@ var gulp = require('gulp'),
             dir.src + '/scripts/customerService/*.ts',
             dir.src + '/scripts/shoppingcartService/*.ts',
             dir.src + '/scripts/employeeService/*.ts',
-            dir.src + '/scripts/main.ts'
+            dir.src + '/scripts/app.ts',
+            dir.src + '/scripts/homeService/*.ts',
+            dir.src + '/scripts/util/*.ts'
         ],
         js: [
             dir.src + ''
@@ -51,7 +53,8 @@ var gulp = require('gulp'),
         ],
         angular2: [
             dir.src + '/angular2/*.js',
-            dir.src + '/angular2/*.d.ts'
+            dir.src + '/angular2/*.d.ts',
+            dir.src + '/angular2/*.map'
         ],
         cssOther: [
             dir.src + '/style/css/*.css.map'
@@ -61,7 +64,9 @@ var gulp = require('gulp'),
             dir.src + '/views/customers/*.html',
             dir.src + '/views/shoppingcart/*.html',
             dir.src + '/views/employees/*.html',
-            dir.src + '/views/app/*.html'
+            dir.src + '/views/app/*.html',
+            dir.src + '/views/home/*.html',
+            dir.src + '/views/util/*.html'
         ],
         img: dir.src + '/style/img/*',
         fonts: dir.src + '/style/fonts/*',
@@ -72,7 +77,6 @@ var gulp = require('gulp'),
         definitions: dir.src + '/definitions'
     };
 
-// TODO split .d.ts Results with other base path
 // Compiles .ts files into .js
 gulp.task('scripts', function(){
    var tsResult = gulp.src(data.ts, {base: "./src"})
@@ -123,7 +127,7 @@ gulp.task('watch', function(){
 // Webserver with livereload
 gulp.task('connect', function() {
     connect.server({
-        // root: 'build',
+        root: 'build',
         livereload: true
     });
 });

@@ -1,0 +1,15 @@
+<span *for="#star of arrayify(max); #i = index">
+      <span class="fa"
+            [class.fa-star]="i < value"
+            [class.fa-star-o]="i >= value"
+            (click)="select(i)">
+      </span>
+</span>
+
+<!--
+<span *for="#star of stars">
+  <span class="fa" [class.fa-star]="star <= displayRating"
+        [class.fa-star-o]="star > displayRating" (click)="rate(star)"
+        (mouseenter)="highlight(star)" (mouseleave)="showSavedRating()"></span>
+</span>
+-->

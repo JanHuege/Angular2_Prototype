@@ -27,12 +27,12 @@ export class CustomerController {
     isEditing: boolean;
 
     constructor() {
+        console.log("constructor: CustomerController");
         // this.customerMock = new CustomerResource();
         // this.customer = this.customerMock.getCustomerById(1);
         this.isEditing = false;
     }
 
-    // TODO wenn niemand eingeloggt ist muss ein leerer Kunde zurückgegeben werden (ansonsten Fehler in HTML...)
     public getCustomer(): Customer {
         var customer: Customer = CustomerService.getCustomer();
         if (customer == null) {
@@ -41,7 +41,6 @@ export class CustomerController {
         return customer;
     }
 
-    // TODO allgemeine Kundenverwaltung funktioniert im Moment nicht; wohin?
     /*
      public getCustomer(id: number): void {
         this.customer = this.customerMock.findCustomerById(id);

@@ -7,11 +7,10 @@
 /// <reference path="../definitions/customerService/customerService.d.ts"/>
 /// <reference path="../definitions/articleService/articleResource.d.ts"/>
 /// <reference path="../definitions/articleService/articleController.d.ts"/>
-
 /// <reference path="../definitions/articleService/article.d.ts"/>
 
 /* tslint:disable */
-import {Component, bootstrap, View, For, If} from "angular2/angular2";
+import {Component, bootstrap, View, For, If} from 'angular2/angular2';
 import {ArticleResource} from './articleService/articleResource';
 import {ArticleController} from './articleService/articleController';
 import {ShoppingcartController} from './shoppingcartService/shoppingcartController';
@@ -20,28 +19,47 @@ import {EmployeeController} from './employeeService/employeeController';
 import {Customer} from './customerService/customer';
 import {CustomerResource} from './customerService/customerResource';
 import {CustomerService} from './customerService/customerService';
-// not used
+import {HomeController} from './homeService/homeController'
 import {Article} from './articleService/article';
-
+import {Footer} from './util/footerComponent';
+import {Router, RouterOutlet, RouterLink, RouteConfig, RouteParams, routerInjectables} from 'angular2/router';
 
 @Component({
-    selector: 'cmp',
+    selector: 'app',
     componentServices: [CustomerService]
 })
+@RouteConfig([
+    { path: '/', component: HomeController },
+    { path: '/Katalog', component: ArticleController, as:'article'},
+    { path: '/Warenkorb', component: ShoppingcartController, as:'cart'},
+    { path: '/Profil', component: CustomerController, as:'customer'},
+    { path: '/Personalverwaltung', component: EmployeeController, as:'employee'},
+    { path: '/Startseite', component: HomeController, as:'index'}
+])
 @View({
-    templateUrl: "html_templates/main_template.html",
-    directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, EmployeeController]
+    templateUrl: "html_templates/app_template.html",
+    directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, EmployeeController, RouterOutlet, RouterLink, Footer]
 })
 /* tslint:enable */
-class MyCmp {
-    article: Article;
-    // not used
-    articles: Array<Article>;
+class App {
 
+    article: Article;
+    articles: Array<Article>;
+    // Blendattributes
+    index: string;
+    cart: string;
+    customer: string;
+    employee: string;
+    item: string;
 
     constructor() {
-        console.log("Initiated Mock_SPA");
+        console.log("constructor: App");
         this.articles = [];
+        this.index = "";
+        this.cart = "none";
+        this.customer = "none";
+        this.employee = "none";
+        this.item = "none";
     }
 
     public setlogin(id: number): void {
@@ -56,12 +74,10 @@ class MyCmp {
         return CustomerService.getCustomer();
     }
 
-    // not used
     public setArticles(list: Array<Article>): void {
         this.articles = list;
     }
 
-    // not used
     public getArticles(): Array<Article> {
         return this.articles;
     }
@@ -89,6 +105,40 @@ class MyCmp {
         return false;
     }
 
+    public blendNew(value: number): void {
+        if (value === 0) {
+            this.index = "";
+            this.item = "none";
+            this.customer = "none";
+            this.employee = "none";
+            this.cart = "none";
+        } else if (value === 1) {
+            this.index = "none";
+            this.item = "";
+            this.customer = "none";
+            this.employee = "none";
+            this.cart = "none";
+        } else if (value === 2) {
+            this.index = "none";
+            this.item = "none";
+            this.customer = "none";
+            this.employee = "none";
+            this.cart = "";
+        } else if (value === 3) {
+            this.index = "none";
+            this.item = "none";
+            this.customer = "";
+            this.employee = "none";
+            this.cart = "none";
+        } else if (value === 4) {
+            this.index = "none";
+            this.item = "none";
+            this.customer = "none";
+            this.employee = "none";
+            this.cart = "none";
+        }
+    }
+
 }
 
-bootstrap(MyCmp);
+bootstrap(App, [routerInjectables]);

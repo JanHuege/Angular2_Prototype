@@ -1,11 +1,13 @@
 /// <reference path="./../../angular2/angular2.d.ts"/>
 /// <reference path="../../definitions/employeeService/employee.d.ts"/>
 /// <reference path="../../definitions/employeeService/employeeResource.d.ts"/>
+/// <reference path="../../../typings/lodash/lodash.d.ts" />
 
 /* tslint:disable */
 import {Component,View,bootstrap,For,If} from 'angular2/angular2';
 import {EmployeeResource} from './employeeResource';
 import {Employee} from 'employee';
+import _ = require('lodash');
 
 @Component ({
     selector: 'employeecontroller'
@@ -21,7 +23,9 @@ export class EmployeeController {
     employeeMock: EmployeeResource = new EmployeeResource();
 
     constructor() {
+        console.log("constructor: EmployeeController");
         this.employee = this.employeeMock.getEmployeeById(1337);
+        // console.log(_.isNonEmptyString(''));
     }
 
     public getPersonal(id: number): void {
