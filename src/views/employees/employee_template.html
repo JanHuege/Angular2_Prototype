@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <a href="#">
+                    <a style="cursor: pointer" (click)="">
                         Mehr Infos
                         <i class="fa fa-arrow-circle-right"></i>
                     </a>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <a href="#">
+                    <a style="cursor: pointer" (click)="">
                         Bestellinformationen
                         <i class="fa fa-arrow-circle-right"></i>
                     </a>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <a href="#">
+                    <a style="cursor: pointer" (click)="">
                         Mehr Infos
                         <i class="fa fa-arrow-circle-right"></i>
                     </a>
@@ -110,5 +110,5 @@
         </tbody>
     </table>
     <input #personalid/>
-    <a class="btn btn-primary btn-lg" href="#" role="button" (click)="getPersonal(personalid.value)">Finde anderes Personal &raquo;</a>
+    <button class="btn btn-primary btn-lg" role="button" (click)="getPersonal(personalid.value)">Finde anderes Personal &raquo;</button>
 </div>
