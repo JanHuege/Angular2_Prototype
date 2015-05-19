@@ -14,23 +14,12 @@
     </div>
 </div>
 
-
 <nav>
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
+    <ul class="pager">
+        <li class="previous"><button class="btn btn-default" (click)="previous()"><span aria-hidden="true">&larr;</span> Previous</button></li>
+        <li class="next"><button class="btn btn-default" (click)="next()">Next <span aria-hidden="true">&rarr;</span></button></li>
+    </ul>
+    <ul class="pager">
+
     </ul>
 </nav>
