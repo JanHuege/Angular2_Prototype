@@ -3,7 +3,7 @@
 /// <reference path="../../definitions/shoppingcartService/shoppingcartService.d.ts"/>
 
 /* tslint:disable */
-import {Component, View, bootstrap, For, If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 import {OrderItem} from './orderItem';
 import {ShoppingcartService} from './shoppingcartService';
 import {CustomerService} from '../customerService/customerService'
@@ -14,7 +14,7 @@ import {CustomerService} from '../customerService/customerService'
 })
 @View({
     templateUrl: "html_templates/shoppingcart_template.html",
-    directives: [For, If]
+    directives: [NgFor, NgIf]
 })
 /* tslint:enable */
 export class ShoppingcartController {

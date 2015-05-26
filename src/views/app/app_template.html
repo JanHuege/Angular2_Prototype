@@ -62,7 +62,7 @@
                 </li>
             </ul>
 
-            <div id="navbar-login" class="navbar-collapse collapse" *if="!loggedIn()">
+            <div id="navbar-login" class="navbar-collapse collapse" *ng-if="!loggedIn()">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
                         <input type="text" placeholder="Email eingeben" class="form-control" #email>
@@ -74,7 +74,7 @@
                 </form>
             </div>
 
-            <div id="navbar-logout" class="navbar-collapse collapse" *if="loggedIn()">
+            <div id="navbar-logout" class="navbar-collapse collapse" *ng-if="loggedIn()">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
                         <span>{{ getCustomer().name }}</span>

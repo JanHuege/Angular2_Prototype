@@ -4,7 +4,7 @@
 /// <reference path="../../../typings/lodash/lodash.d.ts" />
 
 /* tslint:disable */
-import {Component,View,bootstrap,For,If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 import {EmployeeResource} from './employeeResource';
 import {Employee} from 'employee';
 import _ = require('lodash');
@@ -15,7 +15,7 @@ import _ = require('lodash');
 
 @View ({
     templateUrl: "html_templates/employee_template.html",
-    directives: [For]
+    directives: [NgFor]
 })
 /* tslint:enable */
 export class EmployeeController {

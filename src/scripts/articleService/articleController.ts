@@ -4,7 +4,7 @@
 /// <reference path="../../definitions/shoppingcartService/shoppingcartService.d.ts"/>
 
 /* tslint:disable */
-import {Component, View, bootstrap, For, If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 import {ArticleResource} from './articleResource';
 import {Article} from 'article';
 import {ShoppingcartService} from '../shoppingcartService/shoppingcartService';
@@ -16,7 +16,7 @@ import {Rater} from '../util/raterComponent';
 })
 @View({
     templateUrl: "html_templates/articles_template.html",
-    directives: [For, Rater]
+    directives: [NgFor, Rater]
 })
 /* tslint:enable */
 export class ArticleController {
