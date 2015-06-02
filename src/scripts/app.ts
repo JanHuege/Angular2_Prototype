@@ -10,7 +10,7 @@
 /// <reference path="../definitions/articleService/article.d.ts"/>
 
 /* tslint:disable */
-import {Component, bootstrap, View, For, If} from 'angular2/angular2';
+import {Component, bootstrap, View, NgFor, NgIf} from 'angular2/angular2';
 import {ArticleResource} from './articleService/articleResource';
 import {ArticleController} from './articleService/articleController';
 import {ShoppingcartController} from './shoppingcartService/shoppingcartController';
@@ -38,7 +38,7 @@ import {Router, RouterOutlet, RouterLink, RouteConfig, RouteParams, routerInject
 ])
 @View({
     templateUrl: "html_templates/app_template.html",
-    directives: [If, For, CustomerController,  ArticleController, ShoppingcartController, EmployeeController, RouterOutlet, RouterLink, Footer]
+    directives: [NgIf, NgFor, CustomerController,  ArticleController, ShoppingcartController, EmployeeController, RouterOutlet, RouterLink, Footer]
 })
 /* tslint:enable */
 class App {

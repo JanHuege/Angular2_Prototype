@@ -4,7 +4,7 @@
 /// <reference path="../../definitions/customerService/customerResource.d.ts"/>
 
 /* tslint:disable */
-import {Component, View, bootstrap, For, If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 import {CustomerResource} from './customerResource';
 import {Customer} from './customer';
 import {CustomerService} from './customerService';
@@ -18,7 +18,7 @@ import {CustomerService} from './customerService';
 })
 @View({
     templateUrl: "html_templates/customer_template.html",
-    directives: [For, If]
+    directives: [NgFor, NgIf]
 })
 /* tslint:enable */
 export class CustomerController {

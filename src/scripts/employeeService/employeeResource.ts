@@ -12,7 +12,7 @@ export class EmployeeResource {
             firstname: "Jan",
             age: 21,
             salary: 2500,
-            role: "Admin",
+            role: "Projektleiter",
             tasks: "- Router ersetzen"
         },
         {

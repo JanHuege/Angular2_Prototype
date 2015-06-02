@@ -1,7 +1,7 @@
 /// <reference path="./../../angular2/angular2.d.ts"/>
 
 /* tslint:disable */
-import {Component,View,bootstrap,For,If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 
 @Component({
     selector: 'home'

@@ -1,7 +1,7 @@
 /// <reference path="./../../angular2/angular2.d.ts"/>
 
 /* tslint:disable */
-import {Component, View, For} from 'angular2/angular2';
+import {Component, View, NgFor} from 'angular2/angular2';
 
 @Component({
     selector: 'rater',
@@ -9,7 +9,7 @@ import {Component, View, For} from 'angular2/angular2';
 })
 @View({
     templateUrl: 'html_templates/rater_template.html',
-    directives: [For]
+    directives: [NgFor]
 })
 /* tslint:enable */
 export class Rater {

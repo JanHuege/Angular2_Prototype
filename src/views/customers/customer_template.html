@@ -1,6 +1,6 @@
 <h1>Kundenverwaltung von {{ getCustomer().firstname }} {{ getCustomer().name }}</h1>
 <p>
-<div *if="!isEditing">
+<div *ng-if="!isEditing">
     <h3>Vorname: {{ getCustomer().firstname }}</h3><br>
     <h3>Nachname: {{ getCustomer().name }}</h3><br>
     <h3>Alter: {{ getCustomer().age }}</h3><br>
@@ -9,7 +9,7 @@
     <button (click)="getCustomer(customerid.value)">Finde Kunden</button> --><br><br>
     <button (click)="editStart()">Daten &aumlndern</button>
 </div>
-<div *if="isEditing">
+<div *ng-if="isEditing">
     <label>Vorname &aumlndern</label><input #vorname value="{{ getCustomer().firstname }}"><br>
     <label>Nachname &aumlndern</label><input #name value="{{ getCustomer().name }}"><br>
     <label>Alter &aumlndern</label><input #alter value="{{ getCustomer().age }}"><br>
