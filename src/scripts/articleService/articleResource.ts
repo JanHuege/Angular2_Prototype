@@ -16,22 +16,17 @@ export class ArticleResource {
         new Article(5, "Kratziger Teppich", 344.55, "Kratzt.", 0),
         new Article(6, "Quietschende Tuer", 123.45, "Mit Extrafunktion.", 2),
         new Article(7, "Test", 123.90, "...", 5),
-        new Article(7, "Test", 123.90, "...", 5),
-        new Article(7, "Test", 123.90, "...", 5),
-        new Article(7, "Test", 123.90, "...", 5),
-        new Article(7, "Test", 123.90, "...", 5),
-        new Article(7, "Test", 123.90, "...", 5)
+        new Article(8, "Test", 123.90, "...", 5),
+        new Article(9, "Test", 123.90, "...", 5),
+        new Article(10, "Test", 123.90, "...", 5),
+        new Article(11, "Test", 123.90, "...", 5),
+        new Article(12, "Test", 123.90, "...", 5),
+        new Article(13, "Artikel 13", 13, "...", 3),
+        new Article(14, "Artikel 14", 14, "...", 4)
     ];
 
     public findArticleById(id: number): Article {
         return _.find(this.articles, (art: Article) => art.id === id );
-/*        var article: Article = null;
-        this.articles.forEach((art: Article) => {
-            if (art.id === id) {
-                article = art;
-            }
-        });
-        return article;*/
     }
 
     public getArticleById(id: number): Article {

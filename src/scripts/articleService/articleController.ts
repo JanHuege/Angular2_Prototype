@@ -20,8 +20,11 @@ import {Rater} from '../util/raterComponent';
 })
 /* tslint:enable */
 export class ArticleController {
+
     articles: Array<Article>;
     articleMock: ArticleResource;
+
+    noOfArticlesOnPage: number = 6;
 
     startNo: number;
     endNo: number;
@@ -31,19 +34,31 @@ export class ArticleController {
         this.articleMock = new ArticleResource();
         this.articles = this.articleMock.getArticles();
         this.startNo = 0;
-        this.endNo = 6;
+        this.endNo = this.startNo + this.noOfArticlesOnPage;
     }
 
     public next(): void {
-        this.startNo += 6;
-        this.endNo += 6;
-        this.articles = this.articleMock.getArticles(this.startNo, this.endNo);
+
+        if (this.endNo !== this.articleMock.articles.length) {
+
+            this.startNo += this.noOfArticlesOnPage;
+            this.endNo += this.noOfArticlesOnPage;
+
+            if (this.endNo >= this.articleMock.articles.length) {
+                this.endNo = this.articleMock.articles.length;
+            }
+
+            this.articles = this.articleMock.getArticles(this.startNo, this.endNo);
+        }
+
     }
 
     public previous(): void {
-        if (this.startNo >= 6) {
-            this.startNo -= 6;
-            this.endNo -= 6;
+
+        if (this.startNo >= this.noOfArticlesOnPage) {
+            this.startNo -= this.noOfArticlesOnPage;
+            this.endNo = this.startNo + this.noOfArticlesOnPage;
+
             this.articles = this.articleMock.getArticles(this.startNo, this.endNo);
         }
     }
