@@ -6452,6 +6452,6 @@ declare module _ {
     }
 }
 
-declare module "lodash" {
+declare module "extern/lodash.min" {
     export = _;
 }

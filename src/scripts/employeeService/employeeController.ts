@@ -7,7 +7,7 @@
 import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 import {EmployeeResource} from './employeeResource';
 import {Employee} from 'employee';
-import _ = require('lodash');
+//import _ = require('lodash.min');
 
 @Component ({
     selector: 'employeecontroller'

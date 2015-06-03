@@ -73,7 +73,6 @@ var gulp = require('gulp'),
         css: dir.src + '/style/css/*.css',
         mincss: dir.src + '/style/css/*.min.css',
         extern: dir.src + '/extern/*',
-        lodash: dir.src + '/extern/lodash.js',
         indexHtml: dir.src + '/index.html',
         definitions: dir.src + '/definitions'
     };
@@ -135,7 +134,7 @@ gulp.task('connect', function() {
 
 // Use to setup all needed data
 // Options --img for imageminification
-gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern','copyMINCSS','copyAngular2', 'copyLodash', 'scripts']);
+gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern','copyMINCSS','copyAngular2', 'scripts']);
 
     gulp.task('minify', ['minify-htmlviews','minify-index-html','imagemin']);
 
@@ -205,11 +204,6 @@ gulp.task('build', ['minify','copyFonts','copyStyleJS','copyCSS-map','copyExtern
         return gulp.src(data.extern)
             .pipe(newer(subdir.extern))
             .pipe(gulp.dest(subdir.extern));
-    });
-
-    gulp.task('copyLodash', function() {
-        return gulp.src(data.lodash)
-            .pipe(gulp.dest(dir.build));
     });
 
 // Check .ts files for mistakes
