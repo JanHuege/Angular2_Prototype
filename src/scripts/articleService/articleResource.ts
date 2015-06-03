@@ -1,9 +1,10 @@
 /// <reference path="../../definitions/articleService/article.d.ts"/>
 /// <reference path="./../../angular2/angular2.d.ts"/>
+/// <reference path="./../../../typings/lodash/lodash.d.ts"/>
 
 /* tslint:disable */
 import {Article} from './article';
-import _ = require('lodash');
+import _ = require('extern/lodash.min');
 /* tslint:enable */
 export class ArticleResource {
 
