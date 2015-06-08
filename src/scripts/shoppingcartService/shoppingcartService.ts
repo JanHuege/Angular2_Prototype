@@ -31,7 +31,7 @@ export let ShoppingcartService: any = {
             return;
         }
 
-        var items: List<OrderItem> = orderItems.filter((item: OrderItem) => item.article.id === id);
+        var items: OrderItem[] = orderItems.filter((item: OrderItem) => item.article.id === id);
 
         if (items.length > 0) {
             items[0].quantity += 1;

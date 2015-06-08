@@ -34,7 +34,7 @@ export class ArticleResource {
         return new Article(id, "Superunbequemer Stuhl.", 999.89, "Ein superunbequemer Stuhl.", 3);
     }
 
-    public getArticles(start: number = 0, end: number = 6): Array<Article> {
+    public getArticles(start: number = 0, end: number = 6): Article[] {
         return this.articles.slice(start, end);
     }
 
