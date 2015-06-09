@@ -1,33 +1,29 @@
 <!-- eigentlicher Warenkorb -->
 <div class="jumbotron" >
-<h2>Warenkorb</h2>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Nr.</th>
-        <th>Artikelname</th>
-        <th>Beschreibung</th>
-        <th>Anzahl</th>
-        <th>Preis</th>
-        <th><!-- Löschbutton--></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ng-for = "#item of getItems()">
-        <td>0</td>
-        <td>{{ item.article.name }}</td>
-        <td>{{ item.article.description }}</td>
-        <td> {{ item.quantity }}</td>
-        <td>{{ item.getTotalPrice() }} &#8364; </td>
-        <td><button type="button" class="btn glyphicon glyphicon-trash btn-danger" (click)="deleteFromCart(item.article.id)"></button></td>
-    </tr>
-    </tbody>
-</table>
+    <h2>Warenkorb</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Artikelname</th>
+            <th>Beschreibung</th>
+            <th>Anzahl</th>
+            <th>Preis</th>
+            <th><!-- Löschbutton --></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ng-for = "#item of getItems()">
+            <td>{{ item.article.name }}</td>
+            <td>{{ item.article.description }}</td>
+            <td><button type="button" class=" glyphicon glyphicon-plus" (click)="addToCart(item.article.id)"></button> {{ item.quantity }} <button type="button" class=" glyphicon glyphicon-minus" (click)="deleteFromCart(item.article.id)"></button></td>
+            <td>{{ item.getTotalPrice() }} &#8364; </td>
+            <td><button type="button" class="btn glyphicon glyphicon-trash btn-danger" (click)="deleteAllFromCart(item.article.id)"></button></td>
+        </tr>
+        </tbody>
+    </table>
 
-<p><b>Wert des Warenkorbs: {{ calculateTotal() }} &#8364; </b></p>
-<!--
-<p><button type="submit" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)=""></button><br><br></p>
--->
-<!-- <p><button type="button" class="btn btn-success glyphicon glyphicon-shopping-cart" (click)="emptyCart()" *if="getItems().length"></button><br><br></p> -->
-<p><button type="button" class="btn btn-success" (click)="emptyCart()" *ng-if="getItems().length"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Bestellen</button><br><br></p>
+    <p><b>Wert des Warenkorbs: {{ calculateTotal() }} &#8364; </b></p><!-- Euro-Zeichen: &#8364 -->
+
+    <p><button type="button" class="btn btn-success" (click)="emptyCart()" *ng-if="getItems().length">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Bestellen</button><br><br></p>
 </div>

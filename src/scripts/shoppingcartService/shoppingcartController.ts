@@ -41,6 +41,11 @@ export class ShoppingcartController {
         ShoppingcartService.deleteFromCart(delid);
     }
 
+    public deleteAllFromCart(delid: number): void {
+        console.log("deleteAllFromCart()");
+        ShoppingcartService.deleteAllFromCart(delid);
+    }
+
     public emptyCart(): void {
         if (CustomerService.loggedIn()) {
             console.log("emptyCart()");
@@ -50,12 +55,4 @@ export class ShoppingcartController {
             alert("You must be logged in!");
         }
     }
-
-    public doneTyping($event: any): void {
-        if ($event.which === 13) {
-            ShoppingcartService.addToCart($event.target.value);
-            $event.target.value = null;
-        }
-    }
-
 }

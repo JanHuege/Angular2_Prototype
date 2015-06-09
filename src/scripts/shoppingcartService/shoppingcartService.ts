@@ -52,6 +52,17 @@ export let ShoppingcartService: any = {
         });
     },
 
+    deleteAllFromCart(delid: number): void {
+        var check: boolean = confirm("Sicher diesen Artikel entfernen?!");
+        if (check === true) {
+            orderItems.forEach((item: OrderItem, index: number) => {
+                if (item.article.id === delid) {
+                    orderItems.splice(index, 1);
+                }
+            });
+        };
+    },
+
     emptyCart(): void {
         alert("Bestellung im Wert von " + this.calculateTotal() + "\u20AC erfolgreich! \n" +
             this.toString());
