@@ -70,5 +70,3 @@ export class EmployeeResource {
         return this.Employees;
     }
 }
-
-
