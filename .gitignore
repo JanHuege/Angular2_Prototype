@@ -50,7 +50,7 @@ node_modules
 # build Directory
 build
 
-# Visual Studio Code Settings blah
+# Visual Studio Code Settings blah3
 .settings
 .vscode
 
