@@ -7,6 +7,7 @@ import {OrderItem} from './orderItem';
 import {Article} from '../articleService/article';
 import {ArticleResource} from '../articleService/articleResource';
 /* tslint:enable */
+
 var orderItems: List<OrderItem> = [];
 
 export let ShoppingcartService: any = {
